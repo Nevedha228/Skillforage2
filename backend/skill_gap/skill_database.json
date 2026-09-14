@@ -1,0 +1,167 @@
+{
+  "engineering": {
+    "cse": {
+      "1": {
+        "skills": [
+          "Python",
+          "Java",
+          "C",
+          "HTML",
+          "CSS",
+          "Git",
+          "Problem Solving"
+        ]
+      },
+      "2": {
+        "skills": [
+          "Data Structures",
+          "Algorithms",
+          "OOP",
+          "Java",
+          "Python",
+          "SQL",
+          "JavaScript",
+          "Git"
+        ]
+      },
+      "3": {
+        "skills": [
+          "Advanced DSA",
+          "Java",
+          "Python",
+          "SQL",
+          "JavaScript",
+          "React",
+          "REST API",
+          "Git",
+          "Spring Boot",
+          "Cloud Basics"
+        ]
+      },
+      "4": {
+        "skills": [
+          "Advanced DSA",
+          "System Design Basics",
+          "Java",
+          "SQL",
+          "Spring Boot",
+          "REST API",
+          "Cloud Basics",
+          "Git",
+          "Aptitude",
+          "Technical Interview",
+          "Communication"
+        ]
+      }
+    },
+
+    "it": {
+      "1": {
+        "skills": [
+          "Python",
+          "Java",
+          "C",
+          "HTML",
+          "CSS",
+          "Git",
+          "Problem Solving"
+        ]
+      },
+      "2": {
+        "skills": [
+          "DSA",
+          "OOP",
+          "SQL",
+          "JavaScript",
+          "Git",
+          "Computer Networks"
+        ]
+      },
+      "3": {
+        "skills": [
+          "Advanced DSA",
+          "React",
+          "REST API",
+          "Cloud Basics",
+          "Git",
+          "Database"
+        ]
+      },
+      "4": {
+        "skills": [
+          "Advanced DSA",
+          "Cloud",
+          "System Design Basics",
+          "Aptitude",
+          "Technical Interview",
+          "Communication"
+        ]
+      }
+    }
+  },
+
+  "pg": {
+    "mca": {
+      "1": {
+        "skills": [
+          "Programming",
+          "Python",
+          "Java",
+          "SQL",
+          "HTML",
+          "CSS",
+          "Git"
+        ]
+      },
+      "2": {
+        "skills": [
+          "DSA",
+          "Java",
+          "Python",
+          "SQL",
+          "React",
+          "REST API",
+          "Cloud Basics",
+          "Aptitude",
+          "Technical Interview"
+        ]
+      }
+    }
+  },
+
+  "arts_science": {
+    "bca": {
+      "1": {
+        "skills": [
+          "Programming Basics",
+          "Python",
+          "HTML",
+          "CSS",
+          "Problem Solving",
+          "Git"
+        ]
+      },
+      "2": {
+        "skills": [
+          "Java",
+          "Python",
+          "SQL",
+          "JavaScript",
+          "DSA",
+          "Git"
+        ]
+      },
+      "3": {
+        "skills": [
+          "Advanced DSA",
+          "React",
+          "REST API",
+          "Database",
+          "Cloud Basics",
+          "Resume Preparation",
+          "Interview Preparation"
+        ]
+      }
+    }
+  }
+}

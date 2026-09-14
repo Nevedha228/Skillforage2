@@ -2,9 +2,29 @@ import re
 
 
 def extract_section(text, section_name, next_sections):
-    pattern = rf"{section_name}:\s*(.*?)(?=\n(?:{'|'.join(next_sections)}):|\Z)"
-    
-    match = re.search(pattern, text, re.IGNORECASE | re.DOTALL)
+    """
+    Extract text between one resume section heading
+    and the next section heading.
+    """
+
+    next_pattern = "|".join(
+        re.escape(section) for section in next_sections
+    )
+
+    pattern = rf"""
+        ^\s*{re.escape(section_name)}\s*:?\s*$
+        (.*?)
+        (?=
+            ^\s*(?:{next_pattern})\s*:?\s*$
+            |\Z
+        )
+    """
+
+    match = re.search(
+        pattern,
+        text,
+        re.IGNORECASE | re.MULTILINE | re.DOTALL | re.VERBOSE
+    )
 
     if match:
         return match.group(1).strip()
@@ -14,16 +34,6 @@ def extract_section(text, section_name, next_sections):
 
 def parse_resume(text):
 
-    sections = [
-        "PROFESSIONAL SUMMARY",
-        "EDUCATION",
-        "TECHNICAL SKILLS",
-        "PROJECTS",
-        "INTERNSHIP",
-        "CERTIFICATIONS",
-        "ACHIEVEMENTS"
-    ]
-
     education = extract_section(
         text,
         "EDUCATION",
@@ -31,6 +41,7 @@ def parse_resume(text):
             "TECHNICAL SKILLS",
             "PROJECTS",
             "INTERNSHIP",
+            "EXPERIENCE",
             "CERTIFICATIONS",
             "ACHIEVEMENTS"
         ]
@@ -42,6 +53,7 @@ def parse_resume(text):
         [
             "PROJECTS",
             "INTERNSHIP",
+            "EXPERIENCE",
             "CERTIFICATIONS",
             "ACHIEVEMENTS"
         ]
@@ -52,6 +64,7 @@ def parse_resume(text):
         "PROJECTS",
         [
             "INTERNSHIP",
+            "EXPERIENCE",
             "CERTIFICATIONS",
             "ACHIEVEMENTS"
         ]
@@ -65,6 +78,16 @@ def parse_resume(text):
             "ACHIEVEMENTS"
         ]
     )
+
+    if not experience:
+        experience = extract_section(
+            text,
+            "EXPERIENCE",
+            [
+                "CERTIFICATIONS",
+                "ACHIEVEMENTS"
+            ]
+        )
 
     return {
         "skills": skills,
