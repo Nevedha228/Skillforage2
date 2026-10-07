@@ -3,7 +3,11 @@ import os
 import re
 
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(
+    os.path.dirname(
+        os.path.abspath(__file__)
+    )
+)
 
 DATABASE_PATH = os.path.join(
     BASE_DIR,
@@ -12,26 +16,40 @@ DATABASE_PATH = os.path.join(
 )
 
 
+# ============================================================
+# DATABASE
+# ============================================================
+
 def load_skill_database():
-    with open(DATABASE_PATH, "r", encoding="utf-8") as file:
+
+    with open(
+        DATABASE_PATH,
+        "r",
+        encoding="utf-8"
+    ) as file:
+
         return json.load(file)
 
 
-# ------------------------------------------
-# Skill aliases
-# ------------------------------------------
+# ============================================================
+# SKILL ALIASES
+# ============================================================
 
 SKILL_ALIASES = {
+
     "js": "javascript",
     "javascript": "javascript",
 
     "py": "python",
+    "python": "python",
 
     "reactjs": "react",
     "react.js": "react",
+    "react": "react",
 
     "nodejs": "node",
     "node.js": "node",
+    "node": "node",
 
     "springboot": "spring boot",
     "spring boot": "spring boot",
@@ -47,6 +65,7 @@ SKILL_ALIASES = {
     "data structures": "data structures",
 
     "mysql": "mysql",
+
     "mongo": "mongodb",
     "mongodb": "mongodb",
 
@@ -59,50 +78,71 @@ SKILL_ALIASES = {
     "css3": "css",
     "css": "css",
 
-    "sql": "sql",
-    "java": "java",
-    "python": "python"
+    "sql": "sql"
 }
 
 
-def normalize_skill(skill):
-    skill = str(skill).lower().strip()
+# ============================================================
+# NORMALIZE
+# ============================================================
 
-    # Remove bullets and common labels
+def normalize_skill(skill):
+
+    skill = str(
+        skill
+    ).lower().strip()
+
     skill = re.sub(
         r"^[•\-*]\s*",
         "",
         skill
     )
 
-    # Remove labels such as:
-    # Programming Languages:
-    # Web Technologies:
-    # Databases:
-    # Tools:
-    # Concepts:
     skill = re.sub(
         r"^[a-z\s]+:\s*",
         "",
         skill
     )
 
-    skill = skill.replace(" ", "")
-    skill = skill.replace("-", "")
-    skill = skill.replace("_", "")
-    skill = skill.replace(".", "")
+    skill = skill.replace(
+        " ",
+        ""
+    )
+
+    skill = skill.replace(
+        "-",
+        ""
+    )
+
+    skill = skill.replace(
+        "_",
+        ""
+    )
+
+    skill = skill.replace(
+        ".",
+        ""
+    )
 
     return skill
 
 
+# ============================================================
+# CANONICAL SKILL
+# ============================================================
+
 def canonical_skill(skill):
-    normalized = normalize_skill(skill)
 
-    # Direct alias
+    normalized = normalize_skill(
+        skill
+    )
+
     if normalized in SKILL_ALIASES:
-        return SKILL_ALIASES[normalized]
 
-    # Check aliases after removing spaces
+        return SKILL_ALIASES[
+            normalized
+        ]
+
     for key, value in SKILL_ALIASES.items():
 
         key_normalized = (
@@ -113,27 +153,33 @@ def canonical_skill(skill):
         )
 
         if normalized == key_normalized:
+
             return value
 
     return normalized
 
 
-def extract_resume_skills(resume_skills):
+# ============================================================
+# CLEAN RESUME SKILLS
+# ============================================================
+
+def extract_resume_skills(
+    resume_skills
+):
 
     clean_skills = []
+
+    if not resume_skills:
+        return clean_skills
 
     for item in resume_skills:
 
         if not item:
             continue
 
-        item = str(item)
-
-        # Split things like:
-        # Java, Python, SQL
         parts = re.split(
             r"[,;|\n]",
-            item
+            str(item)
         )
 
         for part in parts:
@@ -143,7 +189,6 @@ def extract_resume_skills(resume_skills):
             if not part:
                 continue
 
-            # Remove category labels
             part = re.sub(
                 r"^(programming languages|web technologies|databases|tools|concepts|soft skills)\s*:\s*",
                 "",
@@ -151,7 +196,6 @@ def extract_resume_skills(resume_skills):
                 flags=re.IGNORECASE
             )
 
-            # Remove bullets
             part = re.sub(
                 r"^[•\-*]\s*",
                 "",
@@ -159,10 +203,20 @@ def extract_resume_skills(resume_skills):
             )
 
             if part:
-                clean_skills.append(part)
+                clean_skills.append(
+                    part
+                )
 
-    return clean_skills
+    return list(
+        dict.fromkeys(
+            clean_skills
+        )
+    )
 
+
+# ============================================================
+# SKILL GAP ANALYSIS
+# ============================================================
 
 def analyze_skill_gap(
     resume_skills,
@@ -173,18 +227,34 @@ def analyze_skill_gap(
 
     database = load_skill_database()
 
-    education = str(education).lower().strip()
-    branch = str(branch).lower().strip()
-    year = str(year).lower().strip()
+    education = str(
+        education
+    ).lower().strip()
 
-    print("\n========== ANALYZER ==========")
-    print("Education:", education)
-    print("Year:", year)
-    print("Branch:", branch)
+    branch = str(
+        branch
+    ).lower().strip()
 
-    # ------------------------------------------
-    # Find required skills
-    # ------------------------------------------
+    year = str(
+        year
+    ).lower().strip()
+
+    print("\n========== SKILL GAP ANALYZER ==========")
+
+    print(
+        "Education:",
+        education
+    )
+
+    print(
+        "Year:",
+        year
+    )
+
+    print(
+        "Branch:",
+        branch
+    )
 
     try:
 
@@ -194,72 +264,47 @@ def analyze_skill_gap(
 
     except KeyError:
 
-        print("DATABASE LOOKUP FAILED")
-
         print(
-            "Available education:",
-            list(database.keys())
+            "DATABASE LOOKUP FAILED"
         )
 
-        if education in database:
-            print(
-                "Available branches:",
-                list(database[education].keys())
-            )
-
-            if branch in database[education]:
-                print(
-                    "Available years:",
-                    list(database[education][branch].keys())
-                )
-
         return {
+
             "success": False,
+
             "message": (
                 "Roadmap not available for "
                 f"education={education}, "
                 f"branch={branch}, "
                 f"year={year}"
             ),
-            "matched_skills": [],
-            "missing_skills": [],
-            "skill_gap_score": 0
-        }
 
-    # ------------------------------------------
-    # Clean resume skills
-    # ------------------------------------------
+            "matched_skills": [],
+
+            "missing_skills": [],
+
+            "skill_gap_score": 0,
+
+            "required_skills": []
+        }
 
     clean_resume_skills = extract_resume_skills(
         resume_skills
     )
 
-    print(
-        "Clean Resume Skills:",
-        clean_resume_skills
-    )
-
-    # ------------------------------------------
-    # Create canonical skill set
-    # ------------------------------------------
-
     resume_canonical = set()
 
     for skill in clean_resume_skills:
 
-        canonical = canonical_skill(skill)
+        canonical = canonical_skill(
+            skill
+        )
 
         if canonical:
-            resume_canonical.add(canonical)
 
-    print(
-        "Canonical Resume Skills:",
-        resume_canonical
-    )
-
-    # ------------------------------------------
-    # Compare required skills
-    # ------------------------------------------
+            resume_canonical.add(
+                canonical
+            )
 
     matched_skills = []
     missing_skills = []
@@ -272,22 +317,26 @@ def analyze_skill_gap(
 
         if required_canonical in resume_canonical:
 
-            matched_skills.append(required)
+            matched_skills.append(
+                required
+            )
 
         else:
 
-            missing_skills.append(required)
+            missing_skills.append(
+                required
+            )
 
-    # ------------------------------------------
-    # Calculate score
-    # ------------------------------------------
-
-    total = len(required_skills)
+    total = len(
+        required_skills
+    )
 
     if total > 0:
 
         score = round(
-            len(matched_skills) / total * 100
+            len(matched_skills)
+            / total
+            * 100
         )
 
     else:
@@ -305,13 +354,16 @@ def analyze_skill_gap(
     )
 
     print(
-        "Skill Gap Score:",
+        "Score:",
         score
     )
 
-    print("==============================\n")
+    print(
+        "========================================\n"
+    )
 
     return {
+
         "success": True,
 
         "education": education,
