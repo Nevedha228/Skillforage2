@@ -1,6 +1,21 @@
-fastapi
-uvicorn
-python-multipart
-pypdf
-python-docx
-spacy
+# FastAPI API server
+fastapi==0.115.6
+uvicorn==0.34.0
+# Request/response validation (EmailStr needs email-validator)
+pydantic==2.10.6
+email-validator==2.2.0
+# ORM + migrations (ANSI SQL; SQLite default, Postgres via DATABASE_URL)
+sqlalchemy==2.0.36
+alembic==1.14.0
+# Password hashing (Argon2id)
+argon2-cffi==23.1.0
+# PDF text extraction for resume analyzer
+pypdf==5.1.0
+python-multipart==0.0.20
+# Tests
+pytest==8.3.4
+httpx==0.28.1
+# Env loading, dates, optional Adzuna HTTP
+python-dotenv==1.0.1
+python-dateutil==2.9.0
+requests==2.32.3

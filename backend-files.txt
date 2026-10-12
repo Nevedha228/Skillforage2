@@ -1,0 +1,300 @@
+Folder PATH listing
+Volume serial number is B628-B931
+C:\USERS\DELL\ONEDRIVE\DESKTOP\SKILLFORAGE\SKILLFORAGE\BACKEND
+|   .env
+|   .env.example
+|   alembic.ini
+|   main.py
+|   pytest.ini
+|   requirements.txt
+|   skillforage.db
+|   skillforge_users.db
+|   test_skillforage.db
+|   
++---.pytest_cache
+|   |   .gitignore
+|   |   CACHEDIR.TAG
+|   |   README.md
+|   |   
+|   \---v
+|       \---cache
+|               lastfailed
+|               nodeids
+|               
++---alembic
+|   |   env.py
+|   |   README
+|   |   script.py.mako
+|   |   
+|   +---versions
+|   |   |   b015bbfe4cde_initial_schema.py
+|   |   |   
+|   |   \---__pycache__
+|   |           b015bbfe4cde_initial_schema.cpython-313.pyc
+|   |           
+|   \---__pycache__
+|           env.cpython-313.pyc
+|           
++---app
+|   |   main.py
+|   |   
+|   +---api
+|   |   \---v1
+|   |       |   assessments.py
+|   |       |   auth.py
+|   |       |   careers.py
+|   |       |   challenges.py
+|   |       |   dashboard.py
+|   |       |   hackathons.py
+|   |       |   interviews.py
+|   |       |   learning.py
+|   |       |   market.py
+|   |       |   profile.py
+|   |       |   projects.py
+|   |       |   resumes.py
+|   |       |   rewards.py
+|   |       |   roadmaps.py
+|   |       |   skills.py
+|   |       |   sprint.py
+|   |       |   what_if.py
+|   |       |   
+|   |       \---__pycache__
+|   |               assessments.cpython-313.pyc
+|   |               auth.cpython-313.pyc
+|   |               careers.cpython-313.pyc
+|   |               challenges.cpython-313.pyc
+|   |               dashboard.cpython-313.pyc
+|   |               hackathons.cpython-313.pyc
+|   |               interviews.cpython-313.pyc
+|   |               learning.cpython-313.pyc
+|   |               market.cpython-313.pyc
+|   |               profile.cpython-313.pyc
+|   |               projects.cpython-313.pyc
+|   |               resumes.cpython-313.pyc
+|   |               rewards.cpython-313.pyc
+|   |               roadmaps.cpython-313.pyc
+|   |               skills.cpython-313.pyc
+|   |               sprint.cpython-313.pyc
+|   |               what_if.cpython-313.pyc
+|   |               
+|   +---core
+|   |   |   config.py
+|   |   |   deps.py
+|   |   |   email.py
+|   |   |   rate_limit.py
+|   |   |   security.py
+|   |   |   
+|   |   \---__pycache__
+|   |           config.cpython-313.pyc
+|   |           deps.cpython-313.pyc
+|   |           email.cpython-313.pyc
+|   |           rate_limit.cpython-313.pyc
+|   |           security.cpython-313.pyc
+|   |           
+|   +---database
+|   |   |   database.py
+|   |   |   
+|   |   \---__pycache__
+|   |           database.cpython-313.pyc
+|   |           
+|   +---models
+|   |   |   assessment.py
+|   |   |   career.py
+|   |   |   challenge.py
+|   |   |   hackathon.py
+|   |   |   interview.py
+|   |   |   learning.py
+|   |   |   market.py
+|   |   |   project.py
+|   |   |   resume.py
+|   |   |   roadmap.py
+|   |   |   skill.py
+|   |   |   user.py
+|   |   |   __init__.py
+|   |   |   
+|   |   \---__pycache__
+|   |           assessment.cpython-313.pyc
+|   |           career.cpython-313.pyc
+|   |           challenge.cpython-313.pyc
+|   |           hackathon.cpython-313.pyc
+|   |           interview.cpython-313.pyc
+|   |           learning.cpython-313.pyc
+|   |           market.cpython-313.pyc
+|   |           project.cpython-313.pyc
+|   |           resume.cpython-313.pyc
+|   |           roadmap.cpython-313.pyc
+|   |           skill.cpython-313.pyc
+|   |           user.cpython-313.pyc
+|   |           __init__.cpython-313.pyc
+|   |           
+|   +---schemas
+|   |   |   assessment.py
+|   |   |   auth.py
+|   |   |   career.py
+|   |   |   challenge.py
+|   |   |   dashboard.py
+|   |   |   hackathon.py
+|   |   |   interview.py
+|   |   |   learning.py
+|   |   |   profile.py
+|   |   |   project.py
+|   |   |   resume.py
+|   |   |   roadmap.py
+|   |   |   skill.py
+|   |   |   sprint.py
+|   |   |   what_if.py
+|   |   |   
+|   |   \---__pycache__
+|   |           assessment.cpython-313.pyc
+|   |           auth.cpython-313.pyc
+|   |           career.cpython-313.pyc
+|   |           challenge.cpython-313.pyc
+|   |           dashboard.cpython-313.pyc
+|   |           hackathon.cpython-313.pyc
+|   |           interview.cpython-313.pyc
+|   |           learning.cpython-313.pyc
+|   |           profile.cpython-313.pyc
+|   |           project.cpython-313.pyc
+|   |           resume.cpython-313.pyc
+|   |           roadmap.cpython-313.pyc
+|   |           skill.cpython-313.pyc
+|   |           sprint.cpython-313.pyc
+|   |           what_if.cpython-313.pyc
+|   |           
+|   +---services
+|   |   |   assessment_service.py
+|   |   |   career_service.py
+|   |   |   interview_service.py
+|   |   |   market_service.py
+|   |   |   resume_service.py
+|   |   |   rewards_service.py
+|   |   |   roadmap_service.py
+|   |   |   
+|   |   \---__pycache__
+|   |           assessment_service.cpython-313.pyc
+|   |           career_service.cpython-313.pyc
+|   |           interview_service.cpython-313.pyc
+|   |           market_service.cpython-313.pyc
+|   |           resume_service.cpython-313.pyc
+|   |           rewards_service.cpython-313.pyc
+|   |           roadmap_service.cpython-313.pyc
+|   |           
+|   \---__pycache__
+|           main.cpython-313.pyc
+|           
++---ats
+|   |   ats_checker.py
+|   |   
+|   \---__pycache__
+|           ats_checker.cpython-313.pyc
+|           
++---auth
+|   |   auth_routes.py
+|   |   database.py
+|   |   __init__.py
+|   |   
+|   \---__pycache__
+|           auth_routes.cpython-313.pyc
+|           database.cpython-313.pyc
+|           __init__.cpython-313.pyc
+|           
++---data
+|       assessment_questions.json
+|       career_profiles.json
+|       challenges.json
+|       extraction_evaluation_report.json
+|       hackathons.json
+|       lessons.json
+|       market_seed_jobs.json
+|       project_templates.json
+|       skills.json
+|       
++---market_engine
+|   |   adzuna_collector.py
+|   |   analytics.py
+|   |   database.py
+|   |   market_data.db
+|   |   models.py
+|   |   pipeline.py
+|   |   processor.py
+|   |   skill_extractor.py
+|   |   test_analytics.py
+|   |   test_database.py
+|   |   test_market_processor.py
+|   |   test_pipeline.py
+|   |   test_skill_extractor.py
+|   |   test_skill_validation.py
+|   |   validation_data.py
+|   |   __init__.py
+|   |   
+|   \---__pycache__
+|           adzuna_collector.cpython-313.pyc
+|           analytics.cpython-313.pyc
+|           database.cpython-313.pyc
+|           models.cpython-313.pyc
+|           pipeline.cpython-313.pyc
+|           processor.cpython-313.pyc
+|           skill_extractor.cpython-313.pyc
+|           test_analytics.cpython-313.pyc
+|           test_database.cpython-313.pyc
+|           test_market_processor.cpython-313.pyc
+|           test_pipeline.cpython-313.pyc
+|           test_skill_extractor.cpython-313.pyc
+|           test_skill_validation.cpython-313.pyc
+|           validation_data.cpython-313.pyc
+|           __init__.cpython-313.pyc
+|           
++---parsers
+|   |   pdf_parser.py
+|   |   resume_parser.py
+|   |   
+|   \---__pycache__
+|           pdf_parser.cpython-313.pyc
+|           resume_parser.cpython-313.pyc
+|           
++---roadmap
+|   |   roadmap_engine.py
+|   |   roadmap_generator.py
+|   |   
+|   \---__pycache__
+|           roadmap_generator.cpython-313.pyc
+|           
++---scripts
+|   |   eval_market_extractor.py
+|   |   generate_challenges_and_projects.py
+|   |   generate_lessons.py
+|   |   generate_market_jobs.py
+|   |   generate_questions.py
+|   |   generate_seed_data.py
+|   |   seed_db.py
+|   |   
+|   \---__pycache__
+|           generate_seed_data.cpython-313.pyc
+|           seed_db.cpython-313.pyc
+|           
++---skill_gap
+|   |   skill_database.json
+|   |   skill_gap_analyzer.py
+|   |   
+|   \---__pycache__
+|           skill_gap_analyzer.cpython-313.pyc
+|           
++---tests
+|   |   conftest.py
+|   |   test_auth_and_ownership.py
+|   |   test_career_and_assessments.py
+|   |   test_market_and_extraction.py
+|   |   test_resume_and_interviews.py
+|   |   test_roadmap_and_learning.py
+|   |   
+|   \---__pycache__
+|           conftest.cpython-313-pytest-9.1.1.pyc
+|           test_auth_and_ownership.cpython-313-pytest-9.1.1.pyc
+|           test_career_and_assessments.cpython-313-pytest-9.1.1.pyc
+|           test_market_and_extraction.cpython-313-pytest-9.1.1.pyc
+|           test_resume_and_interviews.cpython-313-pytest-9.1.1.pyc
+|           test_roadmap_and_learning.cpython-313-pytest-9.1.1.pyc
+|           
+\---__pycache__
+        main.cpython-313.pyc
+        

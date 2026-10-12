@@ -1,0 +1,162 @@
+[
+  {
+    "title": "Reverse Words in a String",
+    "challenge_type": "daily",
+    "skill_category": "Python",
+    "description": "Given a sentence string, return a new string with the order of words reversed while preserving individual word characters.",
+    "hints": [
+      "Use string .split() to tokenize on whitespace",
+      "Use slice notation [::-1] or .reverse() on the token list",
+      "Join tokens back with ' '.join()"
+    ],
+    "xp_reward": 50,
+    "solution_type": "code",
+    "verification_rules": {
+      "test_inputs": [
+        "the sky is blue",
+        "hello world"
+      ],
+      "expected": [
+        "blue is sky the",
+        "world hello"
+      ]
+    },
+    "is_active": true
+  },
+  {
+    "title": "SQL Aggregate Department Salary",
+    "challenge_type": "daily",
+    "skill_category": "SQL",
+    "description": "Write a query selecting department_name and the average salary rounded to 2 decimal places from an employee table, filtering out departments with fewer than 3 staff members.",
+    "hints": [
+      "GROUP BY department_name",
+      "Use ROUND(AVG(salary), 2)",
+      "Filter aggregate counts using HAVING COUNT(*) >= 3"
+    ],
+    "xp_reward": 50,
+    "solution_type": "quiz",
+    "verification_rules": {
+      "keyword_check": [
+        "GROUP BY",
+        "HAVING",
+        "AVG"
+      ]
+    },
+    "is_active": true
+  },
+  {
+    "title": "Find Duplicate Number in O(1) Space",
+    "challenge_type": "daily",
+    "skill_category": "DSA",
+    "description": "Given an array of integers containing n + 1 integers where each integer is in range [1, n], find the single duplicate number using Floyd's Tortoise and Hare cycle detection in O(1) auxiliary space.",
+    "hints": [
+      "Treat array values as pointer indices into the array",
+      "Phase 1: Advance slow by 1 step and fast by 2 steps until they intersect",
+      "Phase 2: Reset slow to index 0 and advance both by 1 step until they meet"
+    ],
+    "xp_reward": 75,
+    "solution_type": "code",
+    "verification_rules": {
+      "algorithm": "floyd_cycle_detection"
+    },
+    "is_active": true
+  },
+  {
+    "title": "Build a Debounce Utility in JavaScript",
+    "challenge_type": "weekly",
+    "skill_category": "Web",
+    "description": "Implement a `debounce(func, delay)` function that delays invoking `func` until after `delay` milliseconds have elapsed since the last time the debounced function was invoked.",
+    "hints": [
+      "Use setTimeout and clearTimeout inside a closure",
+      "Return a function that resets the timer on every call",
+      "Forward `this` context and arguments using .apply() or rest parameters"
+    ],
+    "xp_reward": 150,
+    "solution_type": "code",
+    "verification_rules": {
+      "closure_check": true,
+      "timer_cleared": true
+    },
+    "is_active": true
+  },
+  {
+    "title": "Third Highest Salary with DENSE_RANK",
+    "challenge_type": "weekly",
+    "skill_category": "SQL",
+    "description": "Write an ANSI SQL query utilizing window functions (DENSE_RANK) to extract employees earning the 3rd highest distinct compensation.",
+    "hints": [
+      "Use a Common Table Expression (CTE) or subquery",
+      "Apply DENSE_RANK() OVER (ORDER BY salary DESC)",
+      "Filter where rnk = 3 in the outer query"
+    ],
+    "xp_reward": 120,
+    "solution_type": "code",
+    "verification_rules": {
+      "window_function": "DENSE_RANK"
+    },
+    "is_active": true
+  },
+  {
+    "title": "Validate Balanced Parentheses Stack",
+    "challenge_type": "daily",
+    "skill_category": "DSA",
+    "description": "Given a string containing '(', ')', '{', '}', '[' and ']', determine if the input string is valid using a Stack data structure.",
+    "hints": [
+      "Push opening brackets onto a stack",
+      "When encountering a closing bracket, pop from stack and verify matching type",
+      "Verify stack is empty at completion"
+    ],
+    "xp_reward": 50,
+    "solution_type": "code",
+    "verification_rules": {
+      "test_inputs": [
+        "()[]{}",
+        "([)]"
+      ],
+      "expected": [
+        true,
+        false
+      ]
+    },
+    "is_active": true
+  },
+  {
+    "title": "Design a Rate Limiter Concept",
+    "challenge_type": "weekly",
+    "skill_category": "Problem Solving",
+    "description": "Design a sliding window log rate limiter allowing maximum 60 requests per minute per user ID in distributed Redis.",
+    "hints": [
+      "Use a Redis Sorted Set (ZSET) per user",
+      "Score and member are both current epoch timestamp in milliseconds",
+      "Remove entries older than now - 60000ms using ZREMRANGEBYSCORE",
+      "Check cardinality using ZCARD; if < 60, add request"
+    ],
+    "xp_reward": 150,
+    "solution_type": "concept",
+    "verification_rules": {
+      "keywords": [
+        "sorted set",
+        "sliding window",
+        "zremrangebyscore"
+      ]
+    },
+    "is_active": true
+  },
+  {
+    "title": "Calculate Precision and Recall",
+    "challenge_type": "daily",
+    "skill_category": "Statistics/Data Analysis",
+    "description": "Given True Positives = 40, False Positives = 10, False Negatives = 10, calculate Precision, Recall, and F1 Score.",
+    "hints": [
+      "Precision = TP / (TP + FP) = 40 / 50 = 0.80",
+      "Recall = TP / (TP + FN) = 40 / 50 = 0.80",
+      "F1 = 2 * (P * R) / (P + R) = 0.80"
+    ],
+    "xp_reward": 60,
+    "solution_type": "quiz",
+    "verification_rules": {
+      "expected": 0.8
+    },
+    "is_active": true
+  }
+]

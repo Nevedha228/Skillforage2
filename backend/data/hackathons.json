@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Smart India Hackathon 2026 (Student Edition)",
+    "organizer": "Ministry of Education & AICTE",
+    "mode": "hybrid",
+    "location": "National / Multiple Nodal Centers",
+    "date": "2026-11-15 to 2026-11-17",
+    "deadline": "2026-10-31",
+    "eligibility": "B.E., B.Tech, M.Tech, MCA, College Students",
+    "description": "Nationwide competition providing students with a platform to solve pressing real-world problems facing government ministries and industries.",
+    "official_link": "https://www.sih.gov.in/",
+    "source": "Curated Student Competitions (Demo Entry)",
+    "last_verified": "2026-10-10",
+    "is_demo": true
+  },
+  {
+    "name": "HackCBS 9.0 \u2014 Premier Student Hackathon",
+    "organizer": "Shaheed Sukhdev College of Business Studies, Delhi University",
+    "mode": "offline",
+    "location": "New Delhi, India",
+    "date": "2026-11-07 to 2026-11-08",
+    "deadline": "2026-10-25",
+    "eligibility": "Undergraduate Students (Any Branch / Year)",
+    "description": "Annual 24-hour student hackathon fostering innovation in Web3, AI/ML, FinTech, and Open Innovation.",
+    "official_link": "https://hackcbs.tech/",
+    "source": "MLH / Student Hackathon Network (Demo Entry)",
+    "last_verified": "2026-10-09",
+    "is_demo": true
+  },
+  {
+    "name": "HackVerse 2026 \u2014 National Technology Sprint",
+    "organizer": "NITK Surathkal",
+    "mode": "offline",
+    "location": "Surathkal, Karnataka",
+    "date": "2026-12-05 to 2026-12-06",
+    "deadline": "2026-11-20",
+    "eligibility": "All College Students (Year 1-4)",
+    "description": "Flagship 36-hour hackathon bringing together innovative student developers and designers to build transformative digital products.",
+    "official_link": "https://hackverse.nitk.ac.in/",
+    "source": "Campus Innovation Portal (Demo Entry)",
+    "last_verified": "2026-10-08",
+    "is_demo": true
+  },
+  {
+    "name": "Google Solution Challenge 2027 Preview",
+    "organizer": "Google Developer Student Clubs (GDSC)",
+    "mode": "online",
+    "location": "Global / Virtual",
+    "date": "2026-12-01 to 2027-01-31",
+    "deadline": "2026-12-15",
+    "eligibility": "GDSC College Members (All Majors)",
+    "description": "Annual global contest challenging university students to solve one or more of the United Nations 17 Sustainable Development Goals using Google tech.",
+    "official_link": "https://developers.google.com/community/gdsc-solution-challenge",
+    "source": "Google Developers (Demo Entry)",
+    "last_verified": "2026-10-11",
+    "is_demo": true
+  },
+  {
+    "name": "Flipkart GRiD 7.0 \u2014 Software Development Track",
+    "organizer": "Flipkart Engineering",
+    "mode": "online",
+    "location": "Virtual (India)",
+    "date": "2026-11-20 to 2026-12-10",
+    "deadline": "2026-11-10",
+    "eligibility": "B.Tech, B.E., M.Tech, Dual Degree Students",
+    "description": "Flagship engineering challenge testing students on complex problems in system architecture, distributed queues, and algorithmic efficiency.",
+    "official_link": "https://unstop.com/competitions/flipkart-grid",
+    "source": "Unstop Tech Challenges (Demo Entry)",
+    "last_verified": "2026-10-10",
+    "is_demo": true
+  }
+]

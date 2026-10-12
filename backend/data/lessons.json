@@ -1,0 +1,641 @@
+[
+  {
+    "skill_category": "Python",
+    "title": "Python Data Types, Slicing & Collections",
+    "difficulty": "Beginner",
+    "estimated_minutes": 20,
+    "content_markdown": "# Python Core Data Structures: Lists, Tuples & Slices\n\nPython provides powerful built-in sequence and mapping types:\n- **Lists** `[]`: Mutable, ordered, supports indexing and slicing.\n- **Tuples** `()`: Immutable, hashable, memory-efficient.\n- **Dictionaries** `{}`: Key-value mappings powered by hash tables with O(1) average lookup.\n- **Sets** `set()`: Unordered collection of unique items.\n\n### Sequence Slicing Syntax:\n```python\n# syntax: sequence[start:stop:step]\nnumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\nprint(numbers[2:7])    # [2, 3, 4, 5, 6]\nprint(numbers[::-1])   # Reversed list: [9, 8, 7, ..., 0]\n```\n\n### Common Pitfall:\nModifying a list while iterating over it leads to skipped elements. Always iterate over a copy `for item in items[:]:` or construct a new list comprehension.\n",
+    "quiz": {
+      "question": "What does `numbers[::-1]` do in Python?",
+      "options": [
+        "Prints the first number",
+        "Reverses the sequence",
+        "Multiplies each number by -1",
+        "Raises a SyntaxError"
+      ],
+      "correct_answer": "Reverses the sequence",
+      "explanation": "A step of -1 traverses the sequence from right to left, reversing it."
+    },
+    "external_resources": [
+      {
+        "title": "Official Python Tutorial",
+        "url": "https://docs.python.org/3/tutorial/datastructures.html",
+        "type": "Documentation"
+      },
+      {
+        "title": "Real Python: Python Lists and Tuples",
+        "url": "https://realpython.com/python-lists-tuples/",
+        "type": "Article"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "skill_category": "Python",
+    "title": "List Comprehensions & Generator Expressions",
+    "difficulty": "Intermediate",
+    "estimated_minutes": 25,
+    "content_markdown": "# Pythonic Iteration: Comprehensions vs Generators\n\n### List Comprehensions:\nList comprehensions provide a concise way to create lists without boilerplate loops:\n```python\nsquares = [x**2 for x in range(10) if x % 2 == 0]\n# [0, 4, 16, 36, 64]\n```\n\n### Generator Expressions:\nWhen working with millions of records, generating all elements into RAM at once can cause Out-Of-Memory errors. Generator expressions evaluate lazily:\n```python\n# Evaluates one item on demand; O(1) memory!\ngen_squares = (x**2 for x in range(1000000) if x % 2 == 0)\nprint(next(gen_squares)) # 0\n```\n\n### Performance Rule:\nUse generator expressions for stream processing and pipeline aggregation (`sum(x for x in ...)`).\n",
+    "quiz": {
+      "question": "Why use a generator expression over a list comprehension for 10 million items?",
+      "options": [
+        "Generators run in C speed",
+        "Generators use O(1) memory by yielding items lazily",
+        "List comprehensions cannot use if statements",
+        "Generators automatically sort numbers"
+      ],
+      "correct_answer": "Generators use O(1) memory by yielding items lazily",
+      "explanation": "Generators compute values on-the-fly rather than allocating the entire list in RAM."
+    },
+    "external_resources": [
+      {
+        "title": "Real Python: Generators and Yield",
+        "url": "https://realpython.com/introduction-to-python-generators/",
+        "type": "Article"
+      },
+      {
+        "title": "Python PEP 289: Generator Expressions",
+        "url": "https://peps.python.org/pep-0289/",
+        "type": "PEP Specification"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "skill_category": "Python",
+    "title": "Decorators & Context Managers in Production",
+    "difficulty": "Advanced",
+    "estimated_minutes": 30,
+    "content_markdown": "# Production Python: Metaprogramming with Decorators & Context Managers\n\n### Understanding Function Decorators:\nA decorator is a callable that takes a function as argument and returns an augmented function:\n```python\nimport functools\nimport time\n\ndef timing_decorator(func):\n    @functools.wraps(func)\n    def wrapper(*args, **kwargs):\n        start = time.perf_counter()\n        result = func(*args, **kwargs)\n        duration = time.perf_counter() - start\n        print(f\"{func.__name__} took {duration:.4f}s\")\n        return result\n    return wrapper\n```\n\n### Context Managers:\nThe `with` statement guarantees cleanup even when exceptions occur:\n```python\nfrom contextlib import contextmanager\n\n@contextmanager\ndef db_transaction():\n    print(\"BEGIN TRANSACTION\")\n    try:\n        yield\n        print(\"COMMIT\")\n    except Exception:\n        print(\"ROLLBACK\")\n        raise\n```\n",
+    "quiz": {
+      "question": "Why should you always apply `@functools.wraps(func)` inside a decorator wrapper?",
+      "options": [
+        "To compile to bytecode",
+        "To preserve original function metadata (__name__, __doc__)",
+        "To prevent recursion",
+        "To enforce type hints"
+      ],
+      "correct_answer": "To preserve original function metadata (__name__, __doc__)",
+      "explanation": "`@wraps` copies over docstrings, function names, and annotations to the wrapper."
+    },
+    "external_resources": [
+      {
+        "title": "Python Docs: Context Managers",
+        "url": "https://docs.python.org/3/library/contextlib.html",
+        "type": "Documentation"
+      },
+      {
+        "title": "Real Python: Primer on Python Decorators",
+        "url": "https://realpython.com/primer-on-python-decorators/",
+        "type": "Article"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "skill_category": "SQL",
+    "title": "Relational Query Fundamentals: SELECT, WHERE, and Aggregation",
+    "difficulty": "Beginner",
+    "estimated_minutes": 20,
+    "content_markdown": "# Essential SQL Query Flow\n\nSQL queries are executed logically in a specific order:\n1. `FROM` & `JOIN` (identify target tables)\n2. `WHERE` (filter source rows)\n3. `GROUP BY` (aggregate subsets)\n4. `HAVING` (filter aggregated groups)\n5. `SELECT` (project requested columns)\n6. `ORDER BY` (sort results)\n7. `LIMIT` / `OFFSET` (paginate output)\n\n```sql\nSELECT department, COUNT(*) AS employee_count, AVG(salary) AS avg_sal\nFROM employees\nWHERE is_active = TRUE\nGROUP BY department\nHAVING COUNT(*) > 5\nORDER BY avg_sal DESC;\n```\n",
+    "quiz": {
+      "question": "Which SQL clause evaluates filter conditions before grouping rows?",
+      "options": [
+        "HAVING",
+        "WHERE",
+        "ORDER BY",
+        "SELECT"
+      ],
+      "correct_answer": "WHERE",
+      "explanation": "WHERE filters raw rows before GROUP BY aggregation occurs."
+    },
+    "external_resources": [
+      {
+        "title": "PostgreSQL Tutorial: SELECT Statement",
+        "url": "https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-select/",
+        "type": "Tutorial"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "skill_category": "SQL",
+    "title": "Mastering Table Joins & Subqueries",
+    "difficulty": "Intermediate",
+    "estimated_minutes": 25,
+    "content_markdown": "# Relational Joins & Subquery Patterns\n\n### Join Types:\n- **INNER JOIN**: Returns rows only when keys match in both tables.\n- **LEFT JOIN**: Preserves all rows from the left table, with NULLs for missing right rows.\n- **FULL OUTER JOIN**: Preserves all rows from both tables.\n\n```sql\nSELECT u.username, o.order_id, o.total_amount\nFROM users u\nLEFT JOIN orders o ON u.id = o.user_id;\n```\n\n### Correlated Subqueries:\nA correlated subquery references values from the outer query for each evaluated row.\n",
+    "quiz": {
+      "question": "What is returned for an unmatched row in a LEFT JOIN?",
+      "options": [
+        "Error",
+        "Zero values",
+        "NULL values for right table columns",
+        "The row is dropped"
+      ],
+      "correct_answer": "NULL values for right table columns",
+      "explanation": "LEFT JOIN keeps all left rows and fills right columns with NULL when no match exists."
+    },
+    "external_resources": [
+      {
+        "title": "Mode Analytics: SQL Joins Guide",
+        "url": "https://mode.com/sql-tutorial/sql-joins/",
+        "type": "Guide"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "skill_category": "SQL",
+    "title": "Window Functions & Analytical Partitioning",
+    "difficulty": "Advanced",
+    "estimated_minutes": 30,
+    "content_markdown": "# Analytical Window Functions\n\nWindow functions perform calculations across a set of table rows that are related to the current row, without collapsing rows like `GROUP BY`:\n\n```sql\nSELECT \n    employee_name,\n    department,\n    salary,\n    RANK() OVER (PARTITION BY department ORDER BY salary DESC) as dept_rank,\n    AVG(salary) OVER (PARTITION BY department) as dept_avg,\n    LAG(salary, 1) OVER (PARTITION BY department ORDER BY salary) as prev_lower_salary\nFROM employees;\n```\n\nWindow functions are essential for technical interviews, running totals, top-N per category, and moving averages.\n",
+    "quiz": {
+      "question": "How does a window function differ from GROUP BY?",
+      "options": [
+        "Window functions cannot calculate averages",
+        "Window functions preserve individual rows while calculating aggregates",
+        "Window functions only work on strings",
+        "Window functions do not allow ORDER BY"
+      ],
+      "correct_answer": "Window functions preserve individual rows while calculating aggregates",
+      "explanation": "Unlike GROUP BY which collapses rows, window functions retain each row in the output."
+    },
+    "external_resources": [
+      {
+        "title": "PostgreSQL Docs: Window Functions",
+        "url": "https://www.postgresql.org/docs/current/tutorial-window.html",
+        "type": "Documentation"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "skill_category": "DSA",
+    "title": "Time & Space Complexity: Asymptotic Big-O Analysis",
+    "difficulty": "Beginner",
+    "estimated_minutes": 20,
+    "content_markdown": "# Understanding Big-O Complexity\n\nBig-O notation describes the upper bound of runtime or memory as input size `n` grows:\n- **O(1)** Constant: Array index access, hash map lookup.\n- **O(log n)** Logarithmic: Binary search on sorted array.\n- **O(n)** Linear: Single loop through an array.\n- **O(n log n)** Linearithmic: Merge sort, Heap sort.\n- **O(n^2)** Quadratic: Nested loops, bubble sort.\n\n### Space Complexity:\nAlways account for auxiliary memory allocated by your algorithm, including call stack frames in recursive algorithms.\n",
+    "quiz": {
+      "question": "What is the time complexity of searching a sorted array of size n with Binary Search?",
+      "options": [
+        "O(1)",
+        "O(n)",
+        "O(log n)",
+        "O(n^2)"
+      ],
+      "correct_answer": "O(log n)",
+      "explanation": "Binary search halves the search space at each comparison step, achieving O(log n)."
+    },
+    "external_resources": [
+      {
+        "title": "Big-O Cheat Sheet",
+        "url": "https://www.bigocheatsheet.com/",
+        "type": "Cheat Sheet"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "skill_category": "DSA",
+    "title": "Tree Traversals and Binary Search Tree Properties",
+    "difficulty": "Intermediate",
+    "estimated_minutes": 25,
+    "content_markdown": "# Binary Trees & Depth-First Traversals\n\n### Three Classic DFS Traversals:\n1. **Pre-order**: Node -> Left -> Right\n2. **In-order**: Left -> Node -> Right *(Yields sorted order in a BST!)*\n3. **Post-order**: Left -> Right -> Node *(Useful for subtree deletion or height calculation)*\n\n### Binary Search Tree Invariant:\nFor every node `P`:\n- All values in `P.left` are strictly less than `P.val`.\n- All values in `P.right` are strictly greater than `P.val`.\n",
+    "quiz": {
+      "question": "Which DFS traversal yields elements of a BST in strictly sorted ascending order?",
+      "options": [
+        "Pre-order",
+        "In-order",
+        "Post-order",
+        "Level-order"
+      ],
+      "correct_answer": "In-order",
+      "explanation": "In-order traversal visits left subtree, current node, then right subtree, producing sorted output."
+    },
+    "external_resources": [
+      {
+        "title": "GeeksforGeeks: Tree Traversals",
+        "url": "https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/",
+        "type": "Tutorial"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "skill_category": "DSA",
+    "title": "Dynamic Programming: Memoization vs Tabulation",
+    "difficulty": "Advanced",
+    "estimated_minutes": 30,
+    "content_markdown": "# Mastering Dynamic Programming\n\nDynamic programming applies to problems with:\n1. **Overlapping Subproblems**: The same subproblems are solved repeatedly.\n2. **Optimal Substructure**: The optimal solution to the problem contains optimal solutions to subproblems.\n\n### Two Implementation Strategies:\n- **Top-Down (Memoization)**: Natural recursive formulation cached in a hash map or array.\n- **Bottom-Up (Tabulation)**: Iterative computation from base cases upwards, allowing state-space memory reduction (e.g. keeping only the last 2 states).\n",
+    "quiz": {
+      "question": "What two properties must a problem have to be solvable by Dynamic Programming?",
+      "options": [
+        "High CPU speed and low RAM",
+        "Overlapping Subproblems and Optimal Substructure",
+        "Sorting and Searching",
+        "Bit manipulation and Pointers"
+      ],
+      "correct_answer": "Overlapping Subproblems and Optimal Substructure",
+      "explanation": "DP avoids recomputing identical states (overlapping subproblems) while combining optimal sub-solutions."
+    },
+    "external_resources": [
+      {
+        "title": "MIT OpenCourseWare: Dynamic Programming",
+        "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-fall-2011/resources/lecture-19-dynamic-programming-i-fibonacci-shortest-paths/",
+        "type": "Lecture"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "skill_category": "DBMS",
+    "title": "ACID Properties & Relational Data Integrity",
+    "difficulty": "Beginner",
+    "estimated_minutes": 20,
+    "content_markdown": "# Relational Database Guarantees: ACID\n\n- **Atomicity**: Either all operations in a transaction succeed, or none do (All-or-Nothing).\n- **Consistency**: Data transitions only between valid states conforming to schema constraints.\n- **Isolation**: Concurrent transactions execute without interfering with each other's uncommitted changes.\n- **Durability**: Once committed, changes survive server crashes or power failures.\n",
+    "quiz": {
+      "question": "If a transaction fails halfway through, which ACID property ensures incomplete writes are rolled back?",
+      "options": [
+        "Durability",
+        "Atomicity",
+        "Isolation",
+        "Scalability"
+      ],
+      "correct_answer": "Atomicity",
+      "explanation": "Atomicity treats the sequence of database operations as a single indivisible unit."
+    },
+    "external_resources": [
+      {
+        "title": "Database Systems Concepts (Silberschatz)",
+        "url": "https://www.db-book.com/",
+        "type": "Book"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "skill_category": "DBMS",
+    "title": "Database Normalization: 1NF to BCNF",
+    "difficulty": "Intermediate",
+    "estimated_minutes": 25,
+    "content_markdown": "# Normalization Rules & Anomaly Prevention\n\nNormalization eliminates data redundancy and prevents update, insertion, and deletion anomalies:\n- **1NF**: Column values are atomic; no repeating groups.\n- **2NF**: In 1NF and no non-key attribute is partially dependent on any candidate key.\n- **3NF**: In 2NF and no transitive functional dependency exists between non-key attributes.\n- **BCNF**: For every functional dependency `X -> Y`, `X` must be a super key.\n",
+    "quiz": {
+      "question": "Which normal form specifically eliminates transitive dependencies?",
+      "options": [
+        "1NF",
+        "2NF",
+        "3NF",
+        "4NF"
+      ],
+      "correct_answer": "3NF",
+      "explanation": "3NF requires that no non-prime attribute is transitively dependent on the primary key."
+    },
+    "external_resources": [
+      {
+        "title": "Stanford DB: Relational Design Theory",
+        "url": "https://web.stanford.edu/class/cs145/",
+        "type": "Course"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "skill_category": "DBMS",
+    "title": "Transaction Isolation Levels & Concurrency Anomalies",
+    "difficulty": "Advanced",
+    "estimated_minutes": 30,
+    "content_markdown": "# Concurrency Control: The ANSI Isolation Hierarchy\n\nFour ANSI isolation levels manage tradeoffs between concurrency and correctness:\n1. **Read Uncommitted**: Suffers from Dirty Reads.\n2. **Read Committed**: Prevents Dirty Reads; permits Non-Repeatable Reads.\n3. **Repeatable Read**: Prevents Non-Repeatable Reads; permits Phantoms/Write Skew.\n4. **Serializable**: Full serial execution guarantee.\n",
+    "quiz": {
+      "question": "What is a 'Dirty Read' in database transactions?",
+      "options": [
+        "Reading corrupted disk pages",
+        "Reading uncommitted changes written by another concurrent transaction",
+        "Reading outdated indexes",
+        "Reading null values"
+      ],
+      "correct_answer": "Reading uncommitted changes written by another concurrent transaction",
+      "explanation": "A dirty read occurs when a transaction reads rows modified by another transaction before it commits."
+    },
+    "external_resources": [
+      {
+        "title": "A Critique of ANSI SQL Isolation Levels",
+        "url": "https://arxiv.org/abs/cs/0701157",
+        "type": "Paper"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "skill_category": "OOP",
+    "title": "The Four Pillars of Object-Oriented Design",
+    "difficulty": "Beginner",
+    "estimated_minutes": 20,
+    "content_markdown": "# OOP Pillars in Practice\n\n1. **Encapsulation**: Private state protected behind public interfaces.\n2. **Abstraction**: Hiding internal implementation complexity.\n3. **Inheritance**: Subclassing shared behaviors from generalized parents.\n4. **Polymorphism**: Treating different derived types uniformly via shared methods.\n",
+    "quiz": {
+      "question": "Which pillar of OOP is primarily demonstrated by private variables with getter/setter methods?",
+      "options": [
+        "Polymorphism",
+        "Encapsulation",
+        "Inheritance",
+        "Compilation"
+      ],
+      "correct_answer": "Encapsulation",
+      "explanation": "Encapsulation binds data and functions together while restricting direct access to internal fields."
+    },
+    "external_resources": [
+      {
+        "title": "OOP Design Fundamentals",
+        "url": "https://refactoring.guru/design-patterns",
+        "type": "Guide"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "skill_category": "OOP",
+    "title": "SOLID Principles for Clean Architecture",
+    "difficulty": "Intermediate",
+    "estimated_minutes": 25,
+    "content_markdown": "# The SOLID Principles\n\n- **S**ingle Responsibility: One reason to change.\n- **O**pen/Closed: Open for extension, closed for modification.\n- **L**iskov Substitution: Subclasses must be substitutable for parent types.\n- **I**nterface Segregation: Prefer small, client-specific interfaces.\n- **D**ependency Inversion: Depend on abstractions, not concrete classes.\n",
+    "quiz": {
+      "question": "What does the Open/Closed Principle state?",
+      "options": [
+        "Software entities should be open for extension, but closed for modification",
+        "Files should be closed after opening",
+        "Classes must have open constructors",
+        "Methods should be public"
+      ],
+      "correct_answer": "Software entities should be open for extension, but closed for modification",
+      "explanation": "Classes should be extendable with new behavior (via inheritance or composition) without altering existing code."
+    },
+    "external_resources": [
+      {
+        "title": "Clean Code Handbook",
+        "url": "https://www.oreilly.com/library/view/clean-code-a/9780136083238/",
+        "type": "Book"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "skill_category": "OOP",
+    "title": "Creational & Behavioral Design Patterns in Practice",
+    "difficulty": "Advanced",
+    "estimated_minutes": 30,
+    "content_markdown": "# Essential Design Patterns\n\n- **Factory Pattern**: Centralizes complex object instantiation.\n- **Strategy Pattern**: Encapsulates interchangeable algorithms and behaviors behind an interface.\n- **Observer Pattern**: Implements event-driven pub/sub architecture between loosely coupled objects.\n- **Decorator Pattern**: Dynamically attaches new responsibilities to objects without altering structure.\n",
+    "quiz": {
+      "question": "Which design pattern enables swapping algorithms at runtime by encapsulating each algorithm in a separate class?",
+      "options": [
+        "Singleton",
+        "Strategy",
+        "Adapter",
+        "Builder"
+      ],
+      "correct_answer": "Strategy",
+      "explanation": "The Strategy pattern defines a family of algorithms and makes them interchangeable."
+    },
+    "external_resources": [
+      {
+        "title": "Refactoring Guru: Design Patterns",
+        "url": "https://refactoring.guru/design-patterns",
+        "type": "Interactive Guide"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "skill_category": "Web",
+    "title": "HTTP Protocols, REST Architecture & Status Codes",
+    "difficulty": "Beginner",
+    "estimated_minutes": 20,
+    "content_markdown": "# Modern Web Communication: HTTP & REST\n\nHTTP verbs convey semantic intent:\n- `GET`: Read resource (Idempotent, Safe)\n- `POST`: Create resource (Non-idempotent)\n- `PUT`: Replace resource completely (Idempotent)\n- `PATCH`: Update partial attributes (Non-idempotent or Idempotent)\n- `DELETE`: Remove resource (Idempotent)\n\nStatus codes communicate outcomes:\n- `200 OK`, `201 Created`\n- `400 Bad Request`, `401 Unauthorized`, `403 Forbidden`, `404 Not Found`\n- `500 Internal Server Error`, `503 Service Unavailable`\n",
+    "quiz": {
+      "question": "Which HTTP method should be used to retrieve data without modifying server state?",
+      "options": [
+        "POST",
+        "GET",
+        "PUT",
+        "DELETE"
+      ],
+      "correct_answer": "GET",
+      "explanation": "GET is defined by the HTTP specification as a safe, read-only method."
+    },
+    "external_resources": [
+      {
+        "title": "MDN Web Docs: HTTP Overview",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview",
+        "type": "Documentation"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "skill_category": "Web",
+    "title": "Frontend State Management & React Lifecycle Hooks",
+    "difficulty": "Intermediate",
+    "estimated_minutes": 25,
+    "content_markdown": "# React Architecture: Hooks & Component State\n\n### useState & useEffect:\n- `useState`: Declares reactive state variable with setter function.\n- `useEffect`: Manages lifecycle subscriptions, API calls, and cleanup routines.\n\n### Best Practices:\n1. Keep component state localized to the lowest common parent.\n2. Avoid derived state in `useState`; compute it inline during render.\n3. Clean up timers and event listeners in the `useEffect` return function.\n",
+    "quiz": {
+      "question": "What is the second argument passed to React's useEffect hook?",
+      "options": [
+        "A callback function",
+        "A dependency array",
+        "A timeout duration in ms",
+        "A DOM selector"
+      ],
+      "correct_answer": "A dependency array",
+      "explanation": "The dependency array tells React when to re-execute the effect."
+    },
+    "external_resources": [
+      {
+        "title": "React Official Docs",
+        "url": "https://react.dev/",
+        "type": "Documentation"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "skill_category": "Web",
+    "title": "Web Security: CORS, CSRF, XSS & Secure Cookies",
+    "difficulty": "Advanced",
+    "estimated_minutes": 30,
+    "content_markdown": "# Securing Web Applications\n\n### Defense-in-Depth Mechanisms:\n1. **XSS (Cross-Site Scripting)**: Sanitize user input; enforce Content-Security-Policy (CSP); store auth tokens in `HttpOnly` cookies.\n2. **CSRF (Cross-Site Request Forgery)**: Set `SameSite=Lax` or `Strict` on session cookies; validate custom headers.\n3. **CORS**: Ensure server whitelist matches only legitimate client origins.\n",
+    "quiz": {
+      "question": "Which cookie flag prevents client-side JavaScript from reading sensitive session identifiers?",
+      "options": [
+        "Secure",
+        "HttpOnly",
+        "SameSite",
+        "Path"
+      ],
+      "correct_answer": "HttpOnly",
+      "explanation": "HttpOnly blocks `document.cookie` access from JavaScript, protecting against XSS credential theft."
+    },
+    "external_resources": [
+      {
+        "title": "OWASP Top Ten",
+        "url": "https://owasp.org/www-project-top-ten/",
+        "type": "Security Standard"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "skill_category": "Statistics/Data Analysis",
+    "title": "Exploratory Data Analysis with Pandas & Descriptive Statistics",
+    "difficulty": "Beginner",
+    "estimated_minutes": 20,
+    "content_markdown": "# Foundations of Data Analysis\n\nEDA is the crucial first step in any analytical workflow:\n1. Examine distributions (mean, median, standard deviation, interquartile range).\n2. Identify missing values (`df.isnull().sum()`) and handle imputations.\n3. Detect anomalies and outliers with boxplots and z-scores.\n",
+    "quiz": {
+      "question": "Why is the median preferred over the mean for skewed data with extreme outliers?",
+      "options": [
+        "Median is faster to calculate",
+        "Median is resistant to extreme values",
+        "Median works on text",
+        "Mean is always zero"
+      ],
+      "correct_answer": "Median is resistant to extreme values",
+      "explanation": "The median represents the central 50% point and is not dragged by distant outliers."
+    },
+    "external_resources": [
+      {
+        "title": "Pandas User Guide",
+        "url": "https://pandas.pydata.org/docs/user_guide/index.html",
+        "type": "Documentation"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "skill_category": "Statistics/Data Analysis",
+    "title": "Hypothesis Testing & A/B Experimentation",
+    "difficulty": "Intermediate",
+    "estimated_minutes": 25,
+    "content_markdown": "# Statistical Inference & Hypothesis Testing\n\n### The 4-Step Testing Framework:\n1. Formulate Null Hypothesis ($H_0$) and Alternative Hypothesis ($H_a$).\n2. Choose significance level $\\alpha$ (typically 0.05).\n3. Compute test statistic (t-test, z-test, or chi-square).\n4. Calculate p-value: if $p < \\alpha$, reject $H_0$.\n",
+    "quiz": {
+      "question": "What decision is made when the calculated p-value is less than alpha (0.05)?",
+      "options": [
+        "Accept null hypothesis",
+        "Reject null hypothesis in favor of alternative",
+        "Declare test inconclusive",
+        "Discard data"
+      ],
+      "correct_answer": "Reject null hypothesis in favor of alternative",
+      "explanation": "A p-value below alpha demonstrates statistically significant evidence against the null hypothesis."
+    },
+    "external_resources": [
+      {
+        "title": "NIST Engineering Statistics Handbook",
+        "url": "https://www.itl.nist.gov/div898/handbook/",
+        "type": "Reference"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "skill_category": "Statistics/Data Analysis",
+    "title": "Multiple Linear Regression & Causal Modeling",
+    "difficulty": "Advanced",
+    "estimated_minutes": 30,
+    "content_markdown": "# Predictive Modeling: Multiple Linear Regression\n\nLinear regression estimates target $Y$ from features $X$:\n$$Y = \\beta_0 + \\beta_1 X_1 + \\dots + \\beta_p X_p + \\epsilon$$\n\n### Key Diagnostics:\n- Check for multicollinearity using Variance Inflation Factor (VIF < 5).\n- Verify homoscedasticity of residuals via residual vs fitted plots.\n- Use Adjusted $R^2$ to evaluate model fit while penalizing superfluous features.\n",
+    "quiz": {
+      "question": "What problem does a high Variance Inflation Factor (VIF > 10) indicate?",
+      "options": [
+        "High model accuracy",
+        "Severe multicollinearity among predictor variables",
+        "Underfitting",
+        "Lack of data"
+      ],
+      "correct_answer": "Severe multicollinearity among predictor variables",
+      "explanation": "High VIF indicates independent variables are strongly correlated with each other, inflating coefficient variance."
+    },
+    "external_resources": [
+      {
+        "title": "An Introduction to Statistical Learning",
+        "url": "https://www.statlearning.com/",
+        "type": "Textbook"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "skill_category": "Problem Solving",
+    "title": "Structured Algorithmic Problem Solving Frameworks",
+    "difficulty": "Beginner",
+    "estimated_minutes": 20,
+    "content_markdown": "# The 5-Step Problem Solving Framework\n\n1. **Understand**: Clarify inputs, outputs, edge cases (empty lists, negative numbers, overflow).\n2. **Explore Examples**: Walk through typical and boundary inputs manually.\n3. **Break Down**: Formulate brute-force approach first before premature optimization.\n4. **Optimize**: Identify bottlenecks using Big-O time and space tradeoffs.\n5. **Code & Verify**: Write clean modular code and trace with edge inputs.\n",
+    "quiz": {
+      "question": "What should you clarify before writing code in a technical interview?",
+      "options": [
+        "Salary expectations",
+        "Input formats, constraints, and edge cases",
+        "Company stock price",
+        "Nothing, start typing immediately"
+      ],
+      "correct_answer": "Input formats, constraints, and edge cases",
+      "explanation": "Clarifying constraints prevents false assumptions and wasted engineering time."
+    },
+    "external_resources": [
+      {
+        "title": "Cracking the Coding Interview Guide",
+        "url": "https://www.crackingthecodinginterview.com/",
+        "type": "Guide"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "skill_category": "Problem Solving",
+    "title": "Two Pointers, Sliding Window & Frequency Maps",
+    "difficulty": "Intermediate",
+    "estimated_minutes": 25,
+    "content_markdown": "# High-Frequency Interview Patterns\n\n### 1. Two Pointers:\nUsed on sorted arrays or palindromes to reduce $O(n^2)$ nested loops to $O(n)$:\n```python\ndef is_palindrome(s):\n    l, r = 0, len(s) - 1\n    while l < r:\n        if s[l] != s[r]: return False\n        l += 1; r -= 1\n    return True\n```\n\n### 2. Sliding Window:\nMaintains a dynamic window `[start, end]` across continuous subarrays (e.g. longest substring without repeating characters).\n",
+    "quiz": {
+      "question": "What time complexity does the Two Pointers pattern achieve for sorted array pair searches?",
+      "options": [
+        "O(n^2)",
+        "O(n)",
+        "O(n log n)",
+        "O(1)"
+      ],
+      "correct_answer": "O(n)",
+      "explanation": "Pointers traverse the array inward at most once, running in linear O(n) time."
+    },
+    "external_resources": [
+      {
+        "title": "LeetCode Pattern Guide",
+        "url": "https://leetcode.com/explore/",
+        "type": "Platform"
+      }
+    ],
+    "is_demo": false
+  },
+  {
+    "skill_category": "Problem Solving",
+    "title": "Greedy Strategies vs Dynamic Programming",
+    "difficulty": "Advanced",
+    "estimated_minutes": 30,
+    "content_markdown": "# Greedy Choice Property vs Global Optimization\n\n- **Greedy Algorithms**: Make the locally optimal choice at each step without backtracking (e.g. Dijkstra, Huffman Coding, Fractional Knapsack).\n- **Dynamic Programming**: Required when local greedy choices do not guarantee the global optimum (e.g. 0/1 Knapsack, Coin Change with arbitrary denominations).\n\n### Verification Technique:\nTo prove a greedy strategy is valid, use an exchange argument showing any other optimal solution can be transformed into the greedy solution without loss of value.\n",
+    "quiz": {
+      "question": "Why fails a greedy approach for the 0/1 Knapsack problem?",
+      "options": [
+        "Items cannot be divided into fractions, so taking highest value-to-weight may block a better total combination",
+        "Greedy is too fast",
+        "Sorting is impossible",
+        "Math does not allow it"
+      ],
+      "correct_answer": "Items cannot be divided into fractions, so taking highest value-to-weight may block a better total combination",
+      "explanation": "In 0/1 Knapsack, leaving unused capacity may produce a lower total value than taking a different combination of items."
+    },
+    "external_resources": [
+      {
+        "title": "Introduction to Algorithms (CLRS)",
+        "url": "https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/",
+        "type": "Textbook"
+      }
+    ],
+    "is_demo": false
+  }
+]

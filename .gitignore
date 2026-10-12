@@ -5,9 +5,17 @@ __pycache__/
 venv/
 env/
 
-# Environment variables
+# Environment variables (keep .env.example)
 .env
-.env.*
+backend/.env
+frontend/.env
+*.db
+backend/test_skillforage.db
+backend/skillforage.db
+__pycache__/
+.pytest_cache/
+frontend/dist/
+node_modules/
 
 # Node
 node_modules/

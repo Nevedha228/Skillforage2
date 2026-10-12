@@ -1,0 +1,2051 @@
+[
+  {
+    "category": "Python",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "Which of the following data structures is immutable in Python?",
+    "options": [
+      "List",
+      "Dictionary",
+      "Tuple",
+      "Set"
+    ],
+    "correct_answer": "Tuple",
+    "topic_tag": "Python Fundamentals",
+    "explanation": "Tuples cannot be modified after creation, making them immutable sequences.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Python",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "What is the output of `type([])` in Python?",
+    "options": [
+      "<class 'tuple'>",
+      "<class 'list'>",
+      "<class 'array'>",
+      "<class 'dict'>"
+    ],
+    "correct_answer": "<class 'list'>",
+    "topic_tag": "Data Types",
+    "explanation": "Empty square brackets `[]` create a list instance.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Python",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "Which keyword is used to handle exceptions in Python?",
+    "options": [
+      "catch",
+      "try",
+      "except",
+      "error"
+    ],
+    "correct_answer": "except",
+    "topic_tag": "Error Handling",
+    "explanation": "In Python, errors raised in a `try` block are intercepted by `except` blocks.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Python",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "How do you define a function in Python?",
+    "options": [
+      "function myFunc():",
+      "def myFunc():",
+      "func myFunc():",
+      "define myFunc():"
+    ],
+    "correct_answer": "def myFunc():",
+    "topic_tag": "Functions",
+    "explanation": "The `def` keyword declares a function signature in Python.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Python",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "What does the `len()` function return for a string 'SkillForage'?",
+    "options": [
+      "10",
+      "11",
+      "12",
+      "9"
+    ],
+    "correct_answer": "11",
+    "topic_tag": "String Methods",
+    "explanation": "'SkillForage' contains 11 characters.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Python",
+    "difficulty": "Intermediate",
+    "question_type": "multiple_choice",
+    "question_text": "What does a generator function return when called with `yield`?",
+    "options": [
+      "A list of values",
+      "A generator object (iterator)",
+      "A tuple",
+      "None"
+    ],
+    "correct_answer": "A generator object (iterator)",
+    "topic_tag": "Generators & Iterators",
+    "explanation": "Functions containing `yield` return a generator iterator that computes values on demand.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Python",
+    "difficulty": "Intermediate",
+    "question_type": "multiple_choice",
+    "question_text": "What is the difference between `==` and `is` in Python?",
+    "options": [
+      "No difference",
+      "`==` checks value equality, while `is` checks identity (memory location)",
+      "`is` checks value, `==` checks memory",
+      "`is` is only for numbers"
+    ],
+    "correct_answer": "`==` checks value equality, while `is` checks identity (memory location)",
+    "topic_tag": "Memory & Identity",
+    "explanation": "`==` evaluates equality of values, whereas `is` evaluates if two variables refer to the exact same object in memory.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Python",
+    "difficulty": "Intermediate",
+    "question_type": "multiple_choice",
+    "question_text": "What is the time complexity of looking up a key in a Python dictionary?",
+    "options": [
+      "O(n)",
+      "O(log n)",
+      "O(1) on average",
+      "O(n log n)"
+    ],
+    "correct_answer": "O(1) on average",
+    "topic_tag": "Time Complexity",
+    "explanation": "Python dictionaries are implemented using hash tables, offering O(1) average lookup time.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Python",
+    "difficulty": "Intermediate",
+    "question_type": "multiple_choice",
+    "question_text": "What does the `@property` decorator do in a class?",
+    "options": [
+      "Makes a method static",
+      "Allows accessing a method as an attribute getter",
+      "Protects a method from inheritance",
+      "Transforms a class into a singleton"
+    ],
+    "correct_answer": "Allows accessing a method as an attribute getter",
+    "topic_tag": "Decorators & OOP",
+    "explanation": "`@property` turns an instance method into a read-only property attribute getter.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Python",
+    "difficulty": "Intermediate",
+    "question_type": "practical_task",
+    "question_text": "Implement a function `count_vowels(s)` that counts vowels (a, e, i, o, u) case-insensitively.",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "3"
+    ],
+    "correct_answer": "5",
+    "topic_tag": "Practical Task",
+    "explanation": "Iterating through the lowercase string and counting matches in 'aeiou' returns 5 for 'Interview Ready'.",
+    "code_starter": "def count_vowels(s: str) -> int:\n    # Return number of vowels\n    return sum(1 for c in s.lower() if c in 'aeiou')",
+    "test_cases_or_rubric": [
+      {
+        "input": "Interview Ready",
+        "expected": 5
+      },
+      {
+        "input": "SkillForage",
+        "expected": 4
+      }
+    ]
+  },
+  {
+    "category": "Python",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "What is the Global Interpreter Lock (GIL) in CPython?",
+    "options": [
+      "A lock preventing memory leaks",
+      "A mutex that prevents multiple native threads from executing Python bytecodes at once",
+      "A compiler optimization for loops",
+      "A security sandbox"
+    ],
+    "correct_answer": "A mutex that prevents multiple native threads from executing Python bytecodes at once",
+    "topic_tag": "Concurrency & Internals",
+    "explanation": "The GIL ensures thread safety by allowing only one native OS thread to run Python bytecodes simultaneously within a single CPython process.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Python",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "What are `*args` and `**kwargs` in function signatures?",
+    "options": [
+      "Positional arguments list and keyword arguments dictionary",
+      "Pointers and double pointers",
+      "Multiplication and power operators",
+      "Tuple unpacked variables only"
+    ],
+    "correct_answer": "Positional arguments list and keyword arguments dictionary",
+    "topic_tag": "Metaprogramming",
+    "explanation": "`*args` gathers excess positional arguments into a tuple, while `**kwargs` gathers excess keyword arguments into a dictionary.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Python",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "Which metaclass method controls the creation of a new class object?",
+    "options": [
+      "__init__",
+      "__call__",
+      "__new__",
+      "__prepare__"
+    ],
+    "correct_answer": "__new__",
+    "topic_tag": "Metaclasses",
+    "explanation": "`__new__` is the constructor that creates and returns the class object instance before `__init__` initializes it.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Python",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "What does `asyncio.gather()` do in asynchronous Python?",
+    "options": [
+      "Runs coroutines sequentially",
+      "Runs multiple awaitable objects concurrently and aggregates their results",
+      "Kills background threads",
+      "Spawns new subprocesses"
+    ],
+    "correct_answer": "Runs multiple awaitable objects concurrently and aggregates their results",
+    "topic_tag": "AsyncIO",
+    "explanation": "`asyncio.gather()` takes multiple awaitables, schedules them as concurrent tasks, and returns a list of results in order.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Python",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "In Python memory management, how does the garbage collector handle cyclic references?",
+    "options": [
+      "Reference counting alone",
+      "Generational cyclic garbage collector using doubly linked lists",
+      "Manual freeing",
+      "It never cleans cyclic references"
+    ],
+    "correct_answer": "Generational cyclic garbage collector using doubly linked lists",
+    "topic_tag": "Memory Management",
+    "explanation": "CPython supplements reference counting with a generational cyclic garbage collector that detects and cleans isolated reference loops.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "SQL",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "Which SQL clause is used to filter records returned by a SELECT statement?",
+    "options": [
+      "ORDER BY",
+      "GROUP BY",
+      "WHERE",
+      "LIMIT"
+    ],
+    "correct_answer": "WHERE",
+    "topic_tag": "Basic Queries",
+    "explanation": "The `WHERE` clause specifies search conditions to filter rows.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "SQL",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "Which SQL command deletes all records from a table without removing table structure?",
+    "options": [
+      "DROP",
+      "REMOVE",
+      "TRUNCATE",
+      "ALTER"
+    ],
+    "correct_answer": "TRUNCATE",
+    "topic_tag": "DDL/DML",
+    "explanation": "`TRUNCATE TABLE` empties table rows while retaining table columns, constraints, and indexes.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "SQL",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "Which function calculates the average value of a numeric column in SQL?",
+    "options": [
+      "SUM()",
+      "COUNT()",
+      "AVG()",
+      "MEAN()"
+    ],
+    "correct_answer": "AVG()",
+    "topic_tag": "Aggregate Functions",
+    "explanation": "`AVG(column)` computes the arithmetic mean of non-null values.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "SQL",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "How do you select distinct values from a column named `city`?",
+    "options": [
+      "SELECT UNIQUE city FROM users;",
+      "SELECT DISTINCT city FROM users;",
+      "SELECT DIFFERENT city FROM users;",
+      "SELECT FILTER city FROM users;"
+    ],
+    "correct_answer": "SELECT DISTINCT city FROM users;",
+    "topic_tag": "Basic Queries",
+    "explanation": "`SELECT DISTINCT` removes duplicate rows from the query output.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "SQL",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "What is the primary purpose of a PRIMARY KEY in a relational table?",
+    "options": [
+      "To format dates",
+      "To uniquely identify each record and enforce non-null values",
+      "To sort rows alphabetically",
+      "To link foreign databases"
+    ],
+    "correct_answer": "To uniquely identify each record and enforce non-null values",
+    "topic_tag": "Constraints",
+    "explanation": "A PRIMARY KEY constraint enforces uniqueness and NOT NULL on identifying columns.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "SQL",
+    "difficulty": "Intermediate",
+    "question_type": "multiple_choice",
+    "question_text": "What is the difference between WHERE and HAVING in SQL?",
+    "options": [
+      "No difference",
+      "WHERE filters rows before aggregation; HAVING filters aggregated groups",
+      "HAVING filters rows before aggregation; WHERE filters groups",
+      "HAVING only works with strings"
+    ],
+    "correct_answer": "WHERE filters rows before aggregation; HAVING filters aggregated groups",
+    "topic_tag": "Aggregations",
+    "explanation": "`WHERE` evaluates row predicates prior to `GROUP BY`, whereas `HAVING` filters results after aggregate calculations.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "SQL",
+    "difficulty": "Intermediate",
+    "question_type": "multiple_choice",
+    "question_text": "Which JOIN returns all rows from the left table and matching rows from the right table?",
+    "options": [
+      "INNER JOIN",
+      "LEFT JOIN",
+      "RIGHT JOIN",
+      "CROSS JOIN"
+    ],
+    "correct_answer": "LEFT JOIN",
+    "topic_tag": "Joins",
+    "explanation": "A `LEFT OUTER JOIN` preserves all records from the left table, filling unmatched right columns with NULL.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "SQL",
+    "difficulty": "Intermediate",
+    "question_type": "multiple_choice",
+    "question_text": "What will `ROW_NUMBER() OVER (PARTITION BY department_id ORDER BY salary DESC)` do?",
+    "options": [
+      "Sums salaries by department",
+      "Assigns a sequential ranking integer starting at 1 for each employee in each department",
+      "Deletes duplicates",
+      "Sorts the whole table by department"
+    ],
+    "correct_answer": "Assigns a sequential ranking integer starting at 1 for each employee in each department",
+    "topic_tag": "Window Functions",
+    "explanation": "It partitions by department and numbers rows sequentially 1, 2, ... based on descending salary.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "SQL",
+    "difficulty": "Intermediate",
+    "question_type": "multiple_choice",
+    "question_text": "What does an INDEX on a relational database column do?",
+    "options": [
+      "Encrypts the column",
+      "Creates a separate search tree data structure (like B-Tree) to speed up queries at the cost of slower writes",
+      "Restricts value range",
+      "Duplicates the whole table"
+    ],
+    "correct_answer": "Creates a separate search tree data structure (like B-Tree) to speed up queries at the cost of slower writes",
+    "topic_tag": "Performance Tuning",
+    "explanation": "Indexes use B-Trees or Hash indexes to quickly locate rows without scanning every row sequentially.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "SQL",
+    "difficulty": "Intermediate",
+    "question_type": "practical_task",
+    "question_text": "Write an SQL query to find the second highest distinct salary from an `employees` table.",
+    "options": [
+      "SELECT MAX(salary) FROM employees WHERE salary < (SELECT MAX(salary) FROM employees);",
+      "SELECT salary FROM employees ORDER BY salary DESC LIMIT 2;",
+      "SELECT DISTINCT salary FROM employees OFFSET 2;",
+      "SELECT SECOND(salary) FROM employees;"
+    ],
+    "correct_answer": "SELECT MAX(salary) FROM employees WHERE salary < (SELECT MAX(salary) FROM employees);",
+    "topic_tag": "Practical Task",
+    "explanation": "The subquery gets the top salary, and the outer query takes the MAX of all salaries below it.",
+    "code_starter": "SELECT MAX(salary) AS second_highest FROM employees WHERE salary < (SELECT MAX(salary) FROM employees);",
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "SQL",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "What are the four ANSI SQL transaction isolation levels in increasing order of strictness?",
+    "options": [
+      "Read Uncommitted, Read Committed, Repeatable Read, Serializable",
+      "Serializable, Read Committed, Repeatable Read, Read Uncommitted",
+      "Snapshot, Repeatable Read, Read Committed, Serializable",
+      "Atomic, Consistent, Isolated, Durable"
+    ],
+    "correct_answer": "Read Uncommitted, Read Committed, Repeatable Read, Serializable",
+    "topic_tag": "Transactions & ACID",
+    "explanation": "Read Uncommitted permits dirty reads; Serializable provides full mathematical serial consistency.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "SQL",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "In PostgreSQL, what is the purpose of EXPLAIN ANALYZE?",
+    "options": [
+      "Validates table schema syntax",
+      "Executes the query and displays the actual execution plan with node-level runtime metrics",
+      "Compiles query into C code",
+      "Backs up query execution"
+    ],
+    "correct_answer": "Executes the query and displays the actual execution plan with node-level runtime metrics",
+    "topic_tag": "Query Optimization",
+    "explanation": "`EXPLAIN ANALYZE` executes the plan and shows estimated vs actual startup/total costs and row counts.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "SQL",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "What is the difference between RANK() and DENSE_RANK() window functions?",
+    "options": [
+      "RANK leaves gaps in numbering after ties; DENSE_RANK assigns consecutive numbers without gaps",
+      "DENSE_RANK leaves gaps; RANK does not",
+      "RANK works only on numbers; DENSE_RANK works on text",
+      "They are aliases of each other"
+    ],
+    "correct_answer": "RANK leaves gaps in numbering after ties; DENSE_RANK assigns consecutive numbers without gaps",
+    "topic_tag": "Window Functions",
+    "explanation": "If two rows tie for rank 1, RANK assigns rank 3 to the next row, while DENSE_RANK assigns rank 2.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "SQL",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "What is a Common Table Expression (CTE) and recursive CTE used for?",
+    "options": [
+      "Creating temporary named result sets, useful for hierarchical or graph traversal queries",
+      "Creating permanent physical views",
+      "Dropping cyclic dependencies",
+      "Replacing foreign keys"
+    ],
+    "correct_answer": "Creating temporary named result sets, useful for hierarchical or graph traversal queries",
+    "topic_tag": "Advanced SQL",
+    "explanation": "`WITH` clause CTEs enhance readability, and recursive CTEs enable traversals of trees and graphs.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "SQL",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "What phenomenon occurs in Repeatable Read isolation level that is prevented by Serializable?",
+    "options": [
+      "Dirty read",
+      "Non-repeatable read",
+      "Phantom read",
+      "Write skew / Serialization anomaly"
+    ],
+    "correct_answer": "Write skew / Serialization anomaly",
+    "topic_tag": "Concurrency Anomalies",
+    "explanation": "Repeatable Read prevents dirty and non-repeatable reads; serializable isolation prevents phantom inserts and write skew anomalies.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "DSA",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "Which data structure operates on a Last-In-First-Out (LIFO) basis?",
+    "options": [
+      "Queue",
+      "Stack",
+      "Binary Search Tree",
+      "Linked List"
+    ],
+    "correct_answer": "Stack",
+    "topic_tag": "Data Structures",
+    "explanation": "A Stack pushes and pops elements from the top (LIFO).",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "DSA",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "What is the best-case time complexity of linear search?",
+    "options": [
+      "O(n)",
+      "O(log n)",
+      "O(1)",
+      "O(n^2)"
+    ],
+    "correct_answer": "O(1)",
+    "topic_tag": "Searching Algorithms",
+    "explanation": "When the target item is at the very first index, linear search terminates in O(1) time.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "DSA",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "Which node in a tree has no parent?",
+    "options": [
+      "Leaf node",
+      "Root node",
+      "Sibling node",
+      "Internal node"
+    ],
+    "correct_answer": "Root node",
+    "topic_tag": "Trees",
+    "explanation": "The root node is the topmost node in a tree hierarchy without parent links.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "DSA",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "What is the time complexity to insert an element at the end of a dynamic array (amortized)?",
+    "options": [
+      "O(n)",
+      "O(1)",
+      "O(log n)",
+      "O(n^2)"
+    ],
+    "correct_answer": "O(1)",
+    "topic_tag": "Arrays",
+    "explanation": "Appending to a dynamic array takes amortized O(1) time despite occasional O(n) reallocations.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "DSA",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "Which sorting algorithm repeatedly swaps adjacent elements if they are in the wrong order?",
+    "options": [
+      "Merge Sort",
+      "Bubble Sort",
+      "Quick Sort",
+      "Heap Sort"
+    ],
+    "correct_answer": "Bubble Sort",
+    "topic_tag": "Sorting Algorithms",
+    "explanation": "Bubble Sort steps through the list, comparing and swapping adjacent items.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "DSA",
+    "difficulty": "Intermediate",
+    "question_type": "multiple_choice",
+    "question_text": "What is the average time complexity of QuickSort?",
+    "options": [
+      "O(n)",
+      "O(n log n)",
+      "O(n^2)",
+      "O(log n)"
+    ],
+    "correct_answer": "O(n log n)",
+    "topic_tag": "Sorting",
+    "explanation": "QuickSort divides the array by a pivot, achieving O(n log n) average running time.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "DSA",
+    "difficulty": "Intermediate",
+    "question_type": "multiple_choice",
+    "question_text": "In a balanced Binary Search Tree (AVL or Red-Black), what is the search time complexity for n nodes?",
+    "options": [
+      "O(n)",
+      "O(log n)",
+      "O(1)",
+      "O(n log n)"
+    ],
+    "correct_answer": "O(log n)",
+    "topic_tag": "Trees",
+    "explanation": "Because height is maintained at O(log n), search, insert, and delete are all bounded by O(log n).",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "DSA",
+    "difficulty": "Intermediate",
+    "question_type": "multiple_choice",
+    "question_text": "Which algorithm is used to find the shortest path in a graph with non-negative edge weights?",
+    "options": [
+      "Breadth First Search (BFS)",
+      "Dijkstra's Algorithm",
+      "Kruskal's Algorithm",
+      "Floyd-Warshall Algorithm"
+    ],
+    "correct_answer": "Dijkstra's Algorithm",
+    "topic_tag": "Graph Algorithms",
+    "explanation": "Dijkstra's greedy algorithm using a priority queue finds single-source shortest paths in O((V + E) log V).",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "DSA",
+    "difficulty": "Intermediate",
+    "question_type": "multiple_choice",
+    "question_text": "How do you detect a cycle in a singly linked list with O(1) auxiliary space?",
+    "options": [
+      "Hash Set of visited nodes",
+      "Floyd's Cycle-Finding Algorithm (Tortoise and Hare pointer approach)",
+      "Reverse the list",
+      "Count nodes up to infinity"
+    ],
+    "correct_answer": "Floyd's Cycle-Finding Algorithm (Tortoise and Hare pointer approach)",
+    "topic_tag": "Linked Lists",
+    "explanation": "A slow pointer moves 1 step and a fast pointer moves 2 steps; if a cycle exists, they must meet.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "DSA",
+    "difficulty": "Intermediate",
+    "question_type": "practical_task",
+    "question_text": "Solve Two Sum: Find indices of two numbers in an array that add up to a target using a Hash Map.",
+    "options": [
+      "O(n^2) time, O(1) space",
+      "O(n) time, O(n) space",
+      "O(n log n) time, O(1) space",
+      "O(1) time, O(n) space"
+    ],
+    "correct_answer": "O(n) time, O(n) space",
+    "topic_tag": "Practical Task",
+    "explanation": "Using a hash map to store complements allows single-pass O(n) lookup.",
+    "code_starter": "def two_sum(nums, target):\n    seen = {}\n    for i, num in enumerate(nums):\n        diff = target - num\n        if diff in seen:\n            return [seen[diff], i]\n        seen[num] = i\n    return []",
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "DSA",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "What is the time complexity of building a heap from an unsorted array of n elements?",
+    "options": [
+      "O(n log n)",
+      "O(n)",
+      "O(log n)",
+      "O(n^2)"
+    ],
+    "correct_answer": "O(n)",
+    "topic_tag": "Heaps",
+    "explanation": "Bottom-up heap construction (sift-down on all non-leaf nodes) sums to O(n) mathematically.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "DSA",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "What data structure supports amortized O(1) Union and Find operations with path compression?",
+    "options": [
+      "Disjoint Set Union (DSU / Union-Find)",
+      "Segment Tree",
+      "Fenwick Tree",
+      "Trie"
+    ],
+    "correct_answer": "Disjoint Set Union (DSU / Union-Find)",
+    "topic_tag": "Advanced Data Structures",
+    "explanation": "DSU with union-by-rank and path compression operates in nearly O(1) time using the inverse Ackermann function.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "DSA",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "In dynamic programming, what is the difference between top-down and bottom-up approaches?",
+    "options": [
+      "Top-down uses memoization with recursion; bottom-up uses tabulation iteratively",
+      "Bottom-up uses recursion; top-down uses loops",
+      "Top-down requires O(n^3); bottom-up is always O(1)",
+      "No difference"
+    ],
+    "correct_answer": "Top-down uses memoization with recursion; bottom-up uses tabulation iteratively",
+    "topic_tag": "Dynamic Programming",
+    "explanation": "Top-down solves subproblems recursively as requested, while bottom-up builds answers from base cases upwards.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "DSA",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "What algorithm computes Strongly Connected Components (SCCs) in a directed graph in linear O(V + E) time?",
+    "options": [
+      "Tarjan's or Kosaraju's algorithm",
+      "Bellman-Ford algorithm",
+      "Prim's algorithm",
+      "Ford-Fulkerson algorithm"
+    ],
+    "correct_answer": "Tarjan's or Kosaraju's algorithm",
+    "topic_tag": "Graph Theory",
+    "explanation": "Tarjan's algorithm uses DFS traversal with low-link values to find all SCCs in a single pass.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "DSA",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "What data structure is optimal for range sum queries with point updates in O(log n) time?",
+    "options": [
+      "Binary Indexed Tree (Fenwick Tree) or Segment Tree",
+      "Array",
+      "Linked List",
+      "Hash Table"
+    ],
+    "correct_answer": "Binary Indexed Tree (Fenwick Tree) or Segment Tree",
+    "topic_tag": "Range Queries",
+    "explanation": "Both Fenwick and Segment trees allow O(log n) prefix updates and queries.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "DBMS",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "What does ACID stand for in database management systems?",
+    "options": [
+      "Atomicity, Consistency, Isolation, Durability",
+      "Accuracy, Completeness, Integrity, Durability",
+      "Authentication, Concurrency, Isolation, Distribution",
+      "Access, Control, Indexing, Data"
+    ],
+    "correct_answer": "Atomicity, Consistency, Isolation, Durability",
+    "topic_tag": "ACID Properties",
+    "explanation": "ACID defines the foundational transactional guarantees in relational database systems.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "DBMS",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "Which normal form removes partial dependency on composite primary keys?",
+    "options": [
+      "First Normal Form (1NF)",
+      "Second Normal Form (2NF)",
+      "Third Normal Form (3NF)",
+      "Boyce-Codd Normal Form (BCNF)"
+    ],
+    "correct_answer": "Second Normal Form (2NF)",
+    "topic_tag": "Normalization",
+    "explanation": "2NF requires 1NF compliance and that non-key attributes depend on the complete primary key.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "DBMS",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "What is a Foreign Key?",
+    "options": [
+      "A key generated outside the system",
+      "A column that references the primary key of another table",
+      "A password hash",
+      "An unindexed unique column"
+    ],
+    "correct_answer": "A column that references the primary key of another table",
+    "topic_tag": "Relational Integrity",
+    "explanation": "Foreign keys enforce referential integrity between connected tables.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "DBMS",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "Which of the following is a non-relational (NoSQL) database?",
+    "options": [
+      "PostgreSQL",
+      "MySQL",
+      "MongoDB",
+      "SQLite"
+    ],
+    "correct_answer": "MongoDB",
+    "topic_tag": "Database Types",
+    "explanation": "MongoDB stores data as BSON documents rather than relational tables.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "DBMS",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "What does DDL stand for in SQL?",
+    "options": [
+      "Data Definition Language",
+      "Data Distribution Level",
+      "Dynamic Data Logic",
+      "Direct Data Link"
+    ],
+    "correct_answer": "Data Definition Language",
+    "topic_tag": "SQL Categories",
+    "explanation": "DDL includes commands that define schema structure (CREATE, ALTER, DROP, TRUNCATE).",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "DBMS",
+    "difficulty": "Intermediate",
+    "question_type": "multiple_choice",
+    "question_text": "What condition must be satisfied for a relation to be in 3NF?",
+    "options": [
+      "It must be in 2NF and contain no transitive functional dependencies",
+      "It must have only atomic values",
+      "It must have no foreign keys",
+      "All columns must be numbers"
+    ],
+    "correct_answer": "It must be in 2NF and contain no transitive functional dependencies",
+    "topic_tag": "Normalization",
+    "explanation": "3NF eliminates dependencies where a non-prime attribute depends on another non-prime attribute.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "DBMS",
+    "difficulty": "Intermediate",
+    "question_type": "multiple_choice",
+    "question_text": "What is the difference between optimistic and pessimistic concurrency control?",
+    "options": [
+      "Optimistic assumes conflicts are rare and validates at commit; pessimistic locks resources in advance",
+      "Optimistic uses locks; pessimistic uses timestamps",
+      "Optimistic is only for NoSQL; pessimistic is for SQL",
+      "No difference"
+    ],
+    "correct_answer": "Optimistic assumes conflicts are rare and validates at commit; pessimistic locks resources in advance",
+    "topic_tag": "Concurrency Control",
+    "explanation": "Pessimistic locking prevents concurrent access (SELECT FOR UPDATE); optimistic concurrency checks version numbers.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "DBMS",
+    "difficulty": "Intermediate",
+    "question_type": "multiple_choice",
+    "question_text": "What is Write-Ahead Logging (WAL) in database engines?",
+    "options": [
+      "Writing debug logs to disk",
+      "A technique where changes are recorded on durable storage before being applied to data pages",
+      "Encrypting database transactions",
+      "Writing user queries to history"
+    ],
+    "correct_answer": "A technique where changes are recorded on durable storage before being applied to data pages",
+    "topic_tag": "Storage & Recovery",
+    "explanation": "WAL guarantees durability by flushing log records before memory buffers update disk pages.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "DBMS",
+    "difficulty": "Intermediate",
+    "question_type": "multiple_choice",
+    "question_text": "What is the difference between a clustered and non-clustered index?",
+    "options": [
+      "Clustered index dictates physical storage order of rows; non-clustered creates an auxiliary lookup structure",
+      "Non-clustered dictates physical storage order; clustered is auxiliary",
+      "Clustered indexes are slower than non-clustered",
+      "Clustered indexes cannot be used on primary keys"
+    ],
+    "correct_answer": "Clustered index dictates physical storage order of rows; non-clustered creates an auxiliary lookup structure",
+    "topic_tag": "Indexing",
+    "explanation": "A table can have only one clustered index because rows can be physically ordered in only one way.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "DBMS",
+    "difficulty": "Intermediate",
+    "question_type": "practical_task",
+    "question_text": "Identify the foreign key constraint syntax that automatically deletes child records when parent is deleted.",
+    "options": [
+      "ON DELETE RESTRICT",
+      "ON DELETE CASCADE",
+      "ON DELETE SET NULL",
+      "ON DELETE NO ACTION"
+    ],
+    "correct_answer": "ON DELETE CASCADE",
+    "topic_tag": "Practical Task",
+    "explanation": "CASCADE propagates delete actions from referenced parent records to dependent children.",
+    "code_starter": "CREATE TABLE orders (\n    id INT PRIMARY KEY,\n    user_id INT,\n    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE\n);",
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "DBMS",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "What does the CAP theorem state regarding distributed data stores?",
+    "options": [
+      "A distributed system can guarantee at most two out of Consistency, Availability, and Partition Tolerance",
+      "All systems must be ACID compliant",
+      "Consistency is always guaranteed across distributed clouds",
+      "Performance scales linearly with nodes"
+    ],
+    "correct_answer": "A distributed system can guarantee at most two out of Consistency, Availability, and Partition Tolerance",
+    "topic_tag": "Distributed Systems",
+    "explanation": "In the presence of network partitions (P), a distributed system must choose between Consistency (C) and Availability (A).",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "DBMS",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "In Multi-Version Concurrency Control (MVCC), how do read transactions avoid blocking write transactions?",
+    "options": [
+      "By locking the entire table",
+      "By reading an immutable snapshot/version of data corresponding to the transaction start time",
+      "By caching in browser memory",
+      "By delaying writes until reads finish"
+    ],
+    "correct_answer": "By reading an immutable snapshot/version of data corresponding to the transaction start time",
+    "topic_tag": "MVCC & Internals",
+    "explanation": "MVCC generates row versions with transaction IDs, so readers see a consistent view without taking read locks.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "DBMS",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "What is Two-Phase Locking (2PL) and what does strict 2PL guarantee?",
+    "options": [
+      "Growing phase (acquiring locks) and shrinking phase (releasing locks); strict 2PL holds exclusive locks until commit to ensure serializability and avoid cascading aborts",
+      "A protocol for replicating databases across two servers",
+      "A method to encrypt passwords in two passes",
+      "A sorting algorithm for B-Trees"
+    ],
+    "correct_answer": "Growing phase (acquiring locks) and shrinking phase (releasing locks); strict 2PL holds exclusive locks until commit to ensure serializability and avoid cascading aborts",
+    "topic_tag": "Transactions",
+    "explanation": "Strict 2PL prevents cascading aborts by holding all locks until transaction completion.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "DBMS",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "How does a B+ Tree differ from a standard B Tree?",
+    "options": [
+      "In a B+ Tree, data pointers are stored only in leaf nodes, and leaf nodes are linked sequentially for fast range scans",
+      "B+ Trees have no leaf nodes",
+      "Standard B Trees do not allow balancing",
+      "B+ Trees are strictly binary"
+    ],
+    "correct_answer": "In a B+ Tree, data pointers are stored only in leaf nodes, and leaf nodes are linked sequentially for fast range scans",
+    "topic_tag": "Storage Engines",
+    "explanation": "B+ tree internal nodes contain only routing keys; leaves store all data records and link to each other for sequential iteration.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "DBMS",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "What is database sharding and how does consistent hashing improve it?",
+    "options": [
+      "Horizontal partitioning across nodes; consistent hashing minimizes key remapping when nodes are added or removed",
+      "Vertical column splitting; consistent hashing encrypts data",
+      "Backing up data to S3; consistent hashing compresses files",
+      "Creating read replicas; consistent hashing balances CPU"
+    ],
+    "correct_answer": "Horizontal partitioning across nodes; consistent hashing minimizes key remapping when nodes are added or removed",
+    "topic_tag": "Scaling",
+    "explanation": "Consistent hashing maps nodes and keys onto a circular hash ring, requiring only k/N keys to move upon node resizing.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "OOP",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "What are the four core pillars of Object-Oriented Programming?",
+    "options": [
+      "Encapsulation, Inheritance, Polymorphism, Abstraction",
+      "Variables, Loops, Functions, Classes",
+      "Compilation, Interpretation, Execution, Debugging",
+      "Modules, Packages, Libraries, Frameworks"
+    ],
+    "correct_answer": "Encapsulation, Inheritance, Polymorphism, Abstraction",
+    "topic_tag": "OOP Pillars",
+    "explanation": "These 4 concepts form the theoretical foundation of object-oriented architecture.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "OOP",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "What is Encapsulation?",
+    "options": [
+      "Inheriting from multiple parents",
+      "Bundling data and methods that operate on that data, restricting direct access from outside",
+      "Writing abstract methods",
+      "Overloading operators"
+    ],
+    "correct_answer": "Bundling data and methods that operate on that data, restricting direct access from outside",
+    "topic_tag": "Encapsulation",
+    "explanation": "Encapsulation hides internal state and exposes safe interfaces via getters and setters.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "OOP",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "What is an instance of a class called?",
+    "options": [
+      "Function",
+      "Object",
+      "Module",
+      "Variable"
+    ],
+    "correct_answer": "Object",
+    "topic_tag": "Classes & Objects",
+    "explanation": "An object is a concrete runtime instantiation of a class blueprint.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "OOP",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "Which keyword is used by a child class to call a constructor of its parent class in Java and Python?",
+    "options": [
+      "this / self",
+      "super / super()",
+      "base / parent",
+      "extend / inherit"
+    ],
+    "correct_answer": "super / super()",
+    "topic_tag": "Inheritance",
+    "explanation": "`super()` provides access to parent class methods and constructors.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "OOP",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "What is method overloading?",
+    "options": [
+      "Multiple methods in the same class with the same name but different parameter signatures",
+      "Redefining a method in a child class",
+      "Deleting a method",
+      "Calling a method too many times"
+    ],
+    "correct_answer": "Multiple methods in the same class with the same name but different parameter signatures",
+    "topic_tag": "Polymorphism",
+    "explanation": "Overloading allows multiple signatures for one method name resolved at compile/definition time.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "OOP",
+    "difficulty": "Intermediate",
+    "question_type": "multiple_choice",
+    "question_text": "What is method overriding in OOP?",
+    "options": [
+      "Defining a method with the same name and signature in a child class to provide a specific implementation",
+      "Calling a method with wrong arguments",
+      "Declaring static variables",
+      "Hiding private attributes"
+    ],
+    "correct_answer": "Defining a method with the same name and signature in a child class to provide a specific implementation",
+    "topic_tag": "Polymorphism",
+    "explanation": "Method overriding provides polymorphic runtime behavior based on the concrete object type.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "OOP",
+    "difficulty": "Intermediate",
+    "question_type": "multiple_choice",
+    "question_text": "What is the difference between an Abstract Class and an Interface?",
+    "options": [
+      "An abstract class can contain state (fields) and implemented methods; an interface defines contract specifications",
+      "Interfaces cannot be implemented",
+      "Abstract classes cannot have constructors",
+      "They are completely identical"
+    ],
+    "correct_answer": "An abstract class can contain state (fields) and implemented methods; an interface defines contract specifications",
+    "topic_tag": "Design",
+    "explanation": "Abstract classes share common state and default logic, whereas interfaces prescribe public APIs.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "OOP",
+    "difficulty": "Intermediate",
+    "question_type": "multiple_choice",
+    "question_text": "What does the 'S' in SOLID principles stand for?",
+    "options": [
+      "Static Typing Principle",
+      "Single Responsibility Principle (a class should have only one reason to change)",
+      "Subclassing Principle",
+      "Scope Principle"
+    ],
+    "correct_answer": "Single Responsibility Principle (a class should have only one reason to change)",
+    "topic_tag": "SOLID Principles",
+    "explanation": "Single Responsibility Principle asserts that every class should be accountable for a single functional slice.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "OOP",
+    "difficulty": "Intermediate",
+    "question_type": "multiple_choice",
+    "question_text": "What is the Diamond Problem in multiple inheritance?",
+    "options": [
+      "Ambiguity that arises when a child class inherits from two parent classes that both inherit from a single grandparent class",
+      "A visual diagram styling issue",
+      "A memory leak in pointers",
+      "A compiler security bug"
+    ],
+    "correct_answer": "Ambiguity that arises when a child class inherits from two parent classes that both inherit from a single grandparent class",
+    "topic_tag": "Inheritance",
+    "explanation": "Languages resolve this using Method Resolution Order (MRO in Python) or prohibiting multiple class inheritance (Java).",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "OOP",
+    "difficulty": "Intermediate",
+    "question_type": "practical_task",
+    "question_text": "Implement the Singleton design pattern in Python ensuring only one instance is ever created.",
+    "options": [
+      "Using __new__ to check for an existing _instance attribute",
+      "Using a while loop",
+      "Creating multiple classes",
+      "Using global variables only"
+    ],
+    "correct_answer": "Using __new__ to check for an existing _instance attribute",
+    "topic_tag": "Practical Task",
+    "explanation": "Overriding `__new__` intercepts object creation and returns the cached instance.",
+    "code_starter": "class Singleton:\n    _instance = None\n    def __new__(cls):\n        if cls._instance is None:\n            cls._instance = super().__new__(cls)\n        return cls._instance",
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "OOP",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "What does the Liskov Substitution Principle (LSP) require?",
+    "options": [
+      "Subtypes must be substitutable for their base types without altering program correctness",
+      "Classes must be closed for modification",
+      "Interfaces should be small",
+      "High-level modules should depend on abstractions"
+    ],
+    "correct_answer": "Subtypes must be substitutable for their base types without altering program correctness",
+    "topic_tag": "SOLID Principles",
+    "explanation": "LSP requires derived classes to honor contracts and preconditions/postconditions of the base type.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "OOP",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "Why is composition favored over inheritance in software engineering ('Favor Composition Over Inheritance')?",
+    "options": [
+      "Inheritance couples child classes tightly to parent implementation details and breaks encapsulation; composition offers flexible runtime behavior",
+      "Composition is faster to compile",
+      "Inheritance is deprecated in modern languages",
+      "Composition requires fewer lines of code"
+    ],
+    "correct_answer": "Inheritance couples child classes tightly to parent implementation details and breaks encapsulation; composition offers flexible runtime behavior",
+    "topic_tag": "Design Principles",
+    "explanation": "Composition provides loose coupling and enables swapping component behavior dynamically.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "OOP",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "In the Factory and Abstract Factory design patterns, what problem is solved?",
+    "options": [
+      "Decoupling object creation logic from client code, allowing creation of families of related objects without specifying concrete classes",
+      "Creating single global instances",
+      "Managing database migrations",
+      "Adding caching to methods"
+    ],
+    "correct_answer": "Decoupling object creation logic from client code, allowing creation of families of related objects without specifying concrete classes",
+    "topic_tag": "Design Patterns",
+    "explanation": "Factories encapsulate instantiation logic, making applications extensible to new subclasses.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "OOP",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "What does Dependency Inversion Principle (DIP) state?",
+    "options": [
+      "High-level modules should not depend on low-level modules; both should depend on abstractions",
+      "Modules should import only system libraries",
+      "Variables should be inverted in memory",
+      "Subclasses must invert parent methods"
+    ],
+    "correct_answer": "High-level modules should not depend on low-level modules; both should depend on abstractions",
+    "topic_tag": "SOLID Principles",
+    "explanation": "DIP decouples business logic from implementation mechanisms using interfaces or dependency injection.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "OOP",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "What is the Observer pattern and how does it prevent tight coupling?",
+    "options": [
+      "A subject maintains a list of observers and notifies them automatically of state changes via an interface method",
+      "A pattern for logging user keystrokes",
+      "A compiler debugging technique",
+      "A database indexing structure"
+    ],
+    "correct_answer": "A subject maintains a list of observers and notifies them automatically of state changes via an interface method",
+    "topic_tag": "Design Patterns",
+    "explanation": "The Subject only knows observers implement a notification interface, maintaining loose event-driven coupling.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Web",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "What does HTTP stand for in web technologies?",
+    "options": [
+      "HyperText Transfer Protocol",
+      "High-level Text Translation Program",
+      "Hyperlink Transit Platform",
+      "Home Terminal Transfer Policy"
+    ],
+    "correct_answer": "HyperText Transfer Protocol",
+    "topic_tag": "Web Protocols",
+    "explanation": "HTTP is the foundational application layer protocol of the World Wide Web.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Web",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "Which HTTP status code represents 'Resource Not Found'?",
+    "options": [
+      "200",
+      "400",
+      "404",
+      "500"
+    ],
+    "correct_answer": "404",
+    "topic_tag": "HTTP Status Codes",
+    "explanation": "404 indicates the server cannot locate the requested endpoint URL.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Web",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "What is the purpose of the HTML `<meta name='viewport'>` tag?",
+    "options": [
+      "Enables SEO keywords",
+      "Controls layout and viewport scaling on mobile device screens",
+      "Loads CSS stylesheets",
+      "Sets page title"
+    ],
+    "correct_answer": "Controls layout and viewport scaling on mobile device screens",
+    "topic_tag": "Responsive Design",
+    "explanation": "The viewport meta tag instructs mobile browsers to render the website at device width.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Web",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "What does the DOM stand for in browser web development?",
+    "options": [
+      "Document Object Model",
+      "Data Organization Method",
+      "Digital Orientation Mode",
+      "Direct Object Mapping"
+    ],
+    "correct_answer": "Document Object Model",
+    "topic_tag": "Browser Architecture",
+    "explanation": "The DOM is the tree representation of an HTML document accessible to JavaScript.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Web",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "Which CSS property is used to create flexible layout arrangements in modern web pages?",
+    "options": [
+      "float",
+      "display: flex;",
+      "margin: auto;",
+      "clear: both;"
+    ],
+    "correct_answer": "display: flex;",
+    "topic_tag": "CSS Layouts",
+    "explanation": "Flexbox provides powerful 1-dimensional alignment and distribution of items.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Web",
+    "difficulty": "Intermediate",
+    "question_type": "multiple_choice",
+    "question_text": "What is Cross-Origin Resource Sharing (CORS)?",
+    "options": [
+      "A browser security mechanism that restricts HTTP requests from scripts hosted on a different origin unless authorized via HTTP headers",
+      "A JavaScript compression library",
+      "A database connection pool protocol",
+      "A CSS preprocessor"
+    ],
+    "correct_answer": "A browser security mechanism that restricts HTTP requests from scripts hosted on a different origin unless authorized via HTTP headers",
+    "topic_tag": "Web Security",
+    "explanation": "CORS uses headers like Access-Control-Allow-Origin to govern cross-origin API requests safely.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Web",
+    "difficulty": "Intermediate",
+    "question_type": "multiple_choice",
+    "question_text": "What is the purpose of the `useEffect` hook in React?",
+    "options": [
+      "To render JSX",
+      "To perform side effects (data fetching, DOM mutations, subscriptions) in function components",
+      "To create global Redux stores",
+      "To define URL routes"
+    ],
+    "correct_answer": "To perform side effects (data fetching, DOM mutations, subscriptions) in function components",
+    "topic_tag": "React Hooks",
+    "explanation": "`useEffect` executes side-effect logic after component render according to its dependency array.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Web",
+    "difficulty": "Intermediate",
+    "question_type": "multiple_choice",
+    "question_text": "What is the difference between `localStorage` and `sessionStorage` in the Web Storage API?",
+    "options": [
+      "`localStorage` persists across browser sessions; `sessionStorage` clears when the page tab closes",
+      "`sessionStorage` persists forever; `localStorage` expires in 1 hour",
+      "`localStorage` is stored on the server; `sessionStorage` in the client",
+      "There is no functional difference"
+    ],
+    "correct_answer": "`localStorage` persists across browser sessions; `sessionStorage` clears when the page tab closes",
+    "topic_tag": "Client Storage",
+    "explanation": "`localStorage` has no expiration date, while `sessionStorage` lifetime is bound to the tab.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Web",
+    "difficulty": "Intermediate",
+    "question_type": "multiple_choice",
+    "question_text": "What are HTTP cookies marked with `HttpOnly` protected against?",
+    "options": [
+      "Cross-Site Request Forgery (CSRF)",
+      "Cross-Site Scripting (XSS) stealing cookie tokens via `document.cookie`",
+      "SQL Injection",
+      "Distributed Denial of Service (DDoS)"
+    ],
+    "correct_answer": "Cross-Site Scripting (XSS) stealing cookie tokens via `document.cookie`",
+    "topic_tag": "Web Security",
+    "explanation": "`HttpOnly` prevents client-side JavaScript from reading cookies, mitigating XSS credential theft.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Web",
+    "difficulty": "Intermediate",
+    "question_type": "practical_task",
+    "question_text": "Write a fetch GET request that parses JSON and handles non-200 HTTP responses.",
+    "options": [
+      "fetch(url).then(r => { if(!r.ok) throw new Error(); return r.json(); })",
+      "fetch(url).json()",
+      "window.load(url)",
+      "http.get(url)"
+    ],
+    "correct_answer": "fetch(url).then(r => { if(!r.ok) throw new Error(); return r.json(); })",
+    "topic_tag": "Practical Task",
+    "explanation": "`fetch` only rejects on network failure, so `response.ok` must be checked explicitly.",
+    "code_starter": "async function fetchSkills(url) {\n    const res = await fetch(url);\n    if (!res.ok) throw new Error('API failed');\n    return await res.json();\n}",
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Web",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "How does the JavaScript Event Loop handle microtasks vs macrotasks?",
+    "options": [
+      "Microtasks (Promise callbacks, queueMicrotask) execute immediately after the current task finishes and before the next macrotask (setTimeout, I/O)",
+      "Macrotasks have higher priority than microtasks",
+      "Both execute on parallel CPU cores simultaneously",
+      "Microtasks execute only during garbage collection"
+    ],
+    "correct_answer": "Microtasks (Promise callbacks, queueMicrotask) execute immediately after the current task finishes and before the next macrotask (setTimeout, I/O)",
+    "topic_tag": "JavaScript Runtime",
+    "explanation": "The engine clears the entire microtask queue at the end of each tick before dequeuing the next macrotask.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Web",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "What is the difference between Server-Side Rendering (SSR) and Client-Side Rendering (CSR)?",
+    "options": [
+      "SSR compiles HTML on the server before sending to the browser (better initial load & SEO); CSR delivers bare HTML and renders via JavaScript in the browser",
+      "CSR is always faster for initial page load",
+      "SSR cannot use JavaScript",
+      "CSR is only used on mobile phones"
+    ],
+    "correct_answer": "SSR compiles HTML on the server before sending to the browser (better initial load & SEO); CSR delivers bare HTML and renders via JavaScript in the browser",
+    "topic_tag": "Web Architecture",
+    "explanation": "SSR renders markup on request for immediate paint and search indexability; CSR hydrates UI in the client.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Web",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "What security header prevents Clickjacking attacks by forbidding iframe embedding?",
+    "options": [
+      "Content-Security-Policy with frame-ancestors or X-Frame-Options: DENY",
+      "X-XSS-Protection",
+      "Strict-Transport-Security",
+      "Access-Control-Allow-Origin"
+    ],
+    "correct_answer": "Content-Security-Policy with frame-ancestors or X-Frame-Options: DENY",
+    "topic_tag": "Web Security",
+    "explanation": "`X-Frame-Options` and CSP `frame-ancestors` stop attackers from rendering sites inside transparent iframes.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Web",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "What is Tree Shaking in modern JavaScript bundlers (Vite, Webpack)?",
+    "options": [
+      "Removing unused code exports from final bundle output using ES module static import/export analysis",
+      "Minifying variable names",
+      "Compressing image assets",
+      "Sorting DOM nodes"
+    ],
+    "correct_answer": "Removing unused code exports from final bundle output using ES module static import/export analysis",
+    "topic_tag": "Bundling & Optimization",
+    "explanation": "Tree shaking eliminates dead code by analyzing static `import`/`export` syntax.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Web",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "How does HTTP/2 improve network throughput compared to HTTP/1.1?",
+    "options": [
+      "Multiplexing multiple requests over a single TCP connection, header compression (HPACK), and binary framing",
+      "Removing SSL encryption",
+      "Using UDP exclusively without handshakes",
+      "Allowing client-side server hosting"
+    ],
+    "correct_answer": "Multiplexing multiple requests over a single TCP connection, header compression (HPACK), and binary framing",
+    "topic_tag": "Protocols",
+    "explanation": "Multiplexing eliminates head-of-line blocking at the application layer by streaming frames concurrently.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Statistics/Data Analysis",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "What is the difference between Mean and Median?",
+    "options": [
+      "Mean is the arithmetic average; Median is the middle value in sorted data, which is robust to outliers",
+      "Median is always larger than Mean",
+      "Mean is only for integers",
+      "No difference"
+    ],
+    "correct_answer": "Mean is the arithmetic average; Median is the middle value in sorted data, which is robust to outliers",
+    "topic_tag": "Descriptive Statistics",
+    "explanation": "The median represents the 50th percentile and resists extreme outliers.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Statistics/Data Analysis",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "What does standard deviation measure in a dataset?",
+    "options": [
+      "The average value",
+      "The amount of variation or dispersion of data points around the mean",
+      "The maximum minus minimum",
+      "The sample size"
+    ],
+    "correct_answer": "The amount of variation or dispersion of data points around the mean",
+    "topic_tag": "Descriptive Statistics",
+    "explanation": "Standard deviation quantifies how spread out values are relative to the mean.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Statistics/Data Analysis",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "What is a scatter plot primarily used for?",
+    "options": [
+      "Displaying category frequencies",
+      "Visualizing the relationship or correlation between two continuous numeric variables",
+      "Showing data over time only",
+      "Displaying proportions of a whole"
+    ],
+    "correct_answer": "Visualizing the relationship or correlation between two continuous numeric variables",
+    "topic_tag": "Data Visualization",
+    "explanation": "Scatter plots map pairs of numeric values to X and Y coordinates to spot trends and clusters.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Statistics/Data Analysis",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "In Python Pandas, which method returns summary statistics (mean, std, min, max) for numeric columns?",
+    "options": [
+      "df.summary()",
+      "df.describe()",
+      "df.info()",
+      "df.stats()"
+    ],
+    "correct_answer": "df.describe()",
+    "topic_tag": "Pandas",
+    "explanation": "`df.describe()` outputs count, mean, std, min, quartiles, and max for numeric Series.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Statistics/Data Analysis",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "What does a correlation coefficient of +1.0 indicate?",
+    "options": [
+      "No relationship",
+      "A perfect positive linear relationship between two variables",
+      "A negative correlation",
+      "That data is corrupted"
+    ],
+    "correct_answer": "A perfect positive linear relationship between two variables",
+    "topic_tag": "Correlation",
+    "explanation": "+1.0 signifies that as variable X increases, variable Y increases in exact linear proportion.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Statistics/Data Analysis",
+    "difficulty": "Intermediate",
+    "question_type": "multiple_choice",
+    "question_text": "In hypothesis testing, what is a p-value?",
+    "options": [
+      "The probability of obtaining test results at least as extreme as observed, assuming the null hypothesis is true",
+      "The probability that the alternative hypothesis is true",
+      "The percentage error of data collection",
+      "The parameter mean"
+    ],
+    "correct_answer": "The probability of obtaining test results at least as extreme as observed, assuming the null hypothesis is true",
+    "topic_tag": "Hypothesis Testing",
+    "explanation": "A p-value below alpha (e.g. 0.05) leads to rejecting the null hypothesis.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Statistics/Data Analysis",
+    "difficulty": "Intermediate",
+    "question_type": "multiple_choice",
+    "question_text": "What is the difference between Type I and Type II errors?",
+    "options": [
+      "Type I is rejecting a true null hypothesis (false positive); Type II is failing to reject a false null hypothesis (false negative)",
+      "Type I is false negative; Type II is false positive",
+      "Type I is coding error; Type II is math error",
+      "There is no difference"
+    ],
+    "correct_answer": "Type I is rejecting a true null hypothesis (false positive); Type II is failing to reject a false null hypothesis (false negative)",
+    "topic_tag": "Hypothesis Testing",
+    "explanation": "Type I error rate is alpha; Type II error rate is beta (1 - beta is statistical power).",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Statistics/Data Analysis",
+    "difficulty": "Intermediate",
+    "question_type": "multiple_choice",
+    "question_text": "What does the Central Limit Theorem state?",
+    "options": [
+      "The distribution of sample means approximates a normal distribution as sample size increases, regardless of population distribution shape",
+      "All populations are normally distributed",
+      "Sample size must equal population size",
+      "Variance equals standard deviation"
+    ],
+    "correct_answer": "The distribution of sample means approximates a normal distribution as sample size increases, regardless of population distribution shape",
+    "topic_tag": "Probability Theory",
+    "explanation": "CLT allows parametric statistical inference for large samples (n >= 30).",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Statistics/Data Analysis",
+    "difficulty": "Intermediate",
+    "question_type": "multiple_choice",
+    "question_text": "How does IQR (Interquartile Range) help identify outliers in a dataset?",
+    "options": [
+      "Values below Q1 - 1.5*IQR or above Q3 + 1.5*IQR are flagged as potential outliers",
+      "By taking the square root of mean",
+      "By dropping all negative numbers",
+      "By comparing with standard error"
+    ],
+    "correct_answer": "Values below Q1 - 1.5*IQR or above Q3 + 1.5*IQR are flagged as potential outliers",
+    "topic_tag": "Outlier Detection",
+    "explanation": "The Tukey boxplot rule uses 1.5 * IQR beyond the 25th and 75th percentiles.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Statistics/Data Analysis",
+    "difficulty": "Intermediate",
+    "question_type": "practical_task",
+    "question_text": "Calculate the median of the list [12, 3, 7, 19, 5, 21].",
+    "options": [
+      "8.5",
+      "9.5",
+      "7.0",
+      "12.0"
+    ],
+    "correct_answer": "9.5",
+    "topic_tag": "Practical Task",
+    "explanation": "Sorted list is [3, 5, 7, 12, 19, 21]. Middle two values are 7 and 12. Median = (7 + 12)/2 = 9.5.",
+    "code_starter": "import numpy as np\ndef get_median(arr):\n    return float(np.median(arr))",
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Statistics/Data Analysis",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "What is Simpson's Paradox in statistical analysis?",
+    "options": [
+      "A trend that appears in several different groups of data disappears or reverses when the groups are combined",
+      "A phenomenon where variance is infinite",
+      "An error when dividing by zero in correlation",
+      "A paradox about coin tosses"
+    ],
+    "correct_answer": "A trend that appears in several different groups of data disappears or reverses when the groups are combined",
+    "topic_tag": "Statistical Anomalies",
+    "explanation": "Confounding variables and unbalanced group sizes cause aggregate trends to contradict subgroup trends.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Statistics/Data Analysis",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "What is the primary assumption of Ordinary Least Squares (OLS) linear regression regarding residuals?",
+    "options": [
+      "Residuals should be normally distributed, independent, and have constant variance (homoscedasticity)",
+      "Residuals must be zero",
+      "Residuals must increase with X",
+      "Features must be categorical"
+    ],
+    "correct_answer": "Residuals should be normally distributed, independent, and have constant variance (homoscedasticity)",
+    "topic_tag": "Regression Analysis",
+    "explanation": "OLS assumes zero mean, homoscedasticity, and lack of autocorrelation in errors.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Statistics/Data Analysis",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "What does Bayes' Theorem calculate mathematically?",
+    "options": [
+      "P(A|B) = [P(B|A) * P(A)] / P(B)",
+      "P(A and B) = P(A) + P(B)",
+      "P(A|B) = P(A) * P(B)",
+      "P(A|B) = P(B) / P(A)"
+    ],
+    "correct_answer": "P(A|B) = [P(B|A) * P(A)] / P(B)",
+    "topic_tag": "Bayesian Statistics",
+    "explanation": "Bayes' Theorem updates the prior probability P(A) given evidence B using likelihood and marginal evidence.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Statistics/Data Analysis",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "Why is Adjusted R-squared preferred over R-squared in multiple linear regression?",
+    "options": [
+      "R-squared automatically increases as more variables are added even if irrelevant; Adjusted R-squared penalizes non-informative predictors",
+      "Adjusted R-squared is always between 0 and 100",
+      "R-squared cannot be used for linear models",
+      "Adjusted R-squared converts predictions to percentages"
+    ],
+    "correct_answer": "R-squared automatically increases as more variables are added even if irrelevant; Adjusted R-squared penalizes non-informative predictors",
+    "topic_tag": "Model Evaluation",
+    "explanation": "Adjusted R^2 accounts for degrees of freedom and guards against overfitting.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Statistics/Data Analysis",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "In A/B testing, what is the purpose of statistical power (1 - beta)?",
+    "options": [
+      "The probability of correctly rejecting the null hypothesis when a true effect actually exists (avoiding false negatives)",
+      "The maximum sample size allowed",
+      "The speed of server response",
+      "The confidence interval width"
+    ],
+    "correct_answer": "The probability of correctly rejecting the null hypothesis when a true effect actually exists (avoiding false negatives)",
+    "topic_tag": "Experimentation",
+    "explanation": "Targeting 80% or 90% power ensures experiments detect minimum detectable effects reliably.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Problem Solving",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "If a car travels at 60 km/h for 2.5 hours, what distance does it cover?",
+    "options": [
+      "120 km",
+      "150 km",
+      "160 km",
+      "180 km"
+    ],
+    "correct_answer": "150 km",
+    "topic_tag": "Quantitative Aptitude",
+    "explanation": "Distance = Speed * Time = 60 * 2.5 = 150 km.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Problem Solving",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "What is the next number in the series: 2, 4, 8, 16, 32, ...?",
+    "options": [
+      "48",
+      "64",
+      "54",
+      "60"
+    ],
+    "correct_answer": "64",
+    "topic_tag": "Pattern Recognition",
+    "explanation": "Each term is multiplied by 2 (powers of 2: 2^6 = 64).",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Problem Solving",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "A product costs $80 and is discounted by 25%. What is the final selling price?",
+    "options": [
+      "$60",
+      "$65",
+      "$55",
+      "$70"
+    ],
+    "correct_answer": "$60",
+    "topic_tag": "Percentages",
+    "explanation": "Discount = 25% of 80 = $20. Final price = 80 - 20 = $60.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Problem Solving",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "Which algorithmic paradigm breaks a problem into non-overlapping subproblems and combines results?",
+    "options": [
+      "Divide and Conquer",
+      "Greedy Approach",
+      "Dynamic Programming",
+      "Backtracking"
+    ],
+    "correct_answer": "Divide and Conquer",
+    "topic_tag": "Algorithmic Paradigms",
+    "explanation": "Divide and Conquer divides into independent subproblems (like Merge Sort).",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Problem Solving",
+    "difficulty": "Beginner",
+    "question_type": "multiple_choice",
+    "question_text": "If 5 workers build 5 chairs in 5 days, how many days will 10 workers take to build 10 chairs?",
+    "options": [
+      "5 days",
+      "10 days",
+      "2 days",
+      "1 day"
+    ],
+    "correct_answer": "5 days",
+    "topic_tag": "Rate & Work",
+    "explanation": "1 worker builds 1 chair in 5 days. Thus 10 workers build 10 chairs in 5 days.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Problem Solving",
+    "difficulty": "Intermediate",
+    "question_type": "multiple_choice",
+    "question_text": "In a room of 23 people, what is approximately the probability that at least two share a birthday?",
+    "options": [
+      "About 10%",
+      "About 50%",
+      "About 90%",
+      "About 5%"
+    ],
+    "correct_answer": "About 50%",
+    "topic_tag": "Probability & Puzzles",
+    "explanation": "By the Birthday Paradox, with 23 people there are 253 pairs, giving a ~50.7% chance of shared birthday.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Problem Solving",
+    "difficulty": "Intermediate",
+    "question_type": "multiple_choice",
+    "question_text": "What is the minimum number of binary comparisons required to find a counterfeit heavy coin among 9 coins using a balance scale?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correct_answer": "2",
+    "topic_tag": "Logic & Scales",
+    "explanation": "Divide into groups of 3 (3, 3, 3). Weigh two groups; identifies the faulty group in 1 weigh. Second weigh from 3 coins finds the coin.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Problem Solving",
+    "difficulty": "Intermediate",
+    "question_type": "multiple_choice",
+    "question_text": "A train 150m long crosses a pole in 15 seconds. What is the speed of the train in km/h?",
+    "options": [
+      "36 km/h",
+      "40 km/h",
+      "54 km/h",
+      "60 km/h"
+    ],
+    "correct_answer": "36 km/h",
+    "topic_tag": "Time & Distance",
+    "explanation": "Speed = 150m / 15s = 10 m/s. 10 * (18/5) = 36 km/h.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Problem Solving",
+    "difficulty": "Intermediate",
+    "question_type": "multiple_choice",
+    "question_text": "Which algorithmic technique systematically explores all possible candidates for a solution and abandons dead ends?",
+    "options": [
+      "Backtracking",
+      "Dynamic Programming",
+      "Greedy",
+      "Binary Search"
+    ],
+    "correct_answer": "Backtracking",
+    "topic_tag": "Algorithmic Techniques",
+    "explanation": "Backtracking searches depth-first and prunes non-viable branches (e.g. N-Queens, Sudoku).",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Problem Solving",
+    "difficulty": "Intermediate",
+    "question_type": "practical_task",
+    "question_text": "Determine if a string has all unique characters using bitwise operations or a boolean array.",
+    "options": [
+      "True for 'abcdef', False for 'aabc'",
+      "True for all",
+      "False for all",
+      "Error on space"
+    ],
+    "correct_answer": "True for 'abcdef', False for 'aabc'",
+    "topic_tag": "Practical Task",
+    "explanation": "Tracking seen character codes in an integer bitmask gives O(n) runtime and O(1) space.",
+    "code_starter": "def is_unique_chars(s: str) -> bool:\n    checker = 0\n    for char in s:\n        val = ord(char) - ord('a')\n        if (checker & (1 << val)) > 0:\n            return False\n        checker |= (1 << val)\n    return True",
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Problem Solving",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "What is the optimal strategy for the classic 2-Egg Drop problem with a 100-story building?",
+    "options": [
+      "Drop the first egg at intervals of x, x-1, x-2... stories where x(x+1)/2 >= 100 (x = 14 drops minimum)",
+      "Drop at floor 50 then floor 25",
+      "Drop from floor 1 upwards one by one",
+      "Drop at 10-floor intervals (19 drops)"
+    ],
+    "correct_answer": "Drop the first egg at intervals of x, x-1, x-2... stories where x(x+1)/2 >= 100 (x = 14 drops minimum)",
+    "topic_tag": "Puzzle Optimization",
+    "explanation": "Balancing worst-case drops for both eggs requires step decrements, yielding 14 drops in the worst case.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Problem Solving",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "In the Dining Philosophers problem, how can deadlock be formally prevented?",
+    "options": [
+      "Introduce resource hierarchy (e.g. philosophers pick lowest-numbered fork first) or an arbitrator",
+      "Let all philosophers pick the left fork simultaneously",
+      "Increase philosopher thinking time",
+      "Infinite forks"
+    ],
+    "correct_answer": "Introduce resource hierarchy (e.g. philosophers pick lowest-numbered fork first) or an arbitrator",
+    "topic_tag": "Deadlock Prevention",
+    "explanation": "Imposing a total ordering on shared resources breaks Coffman's circular wait condition.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Problem Solving",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "What is the time complexity of the Floyd-Warshall all-pairs shortest paths algorithm?",
+    "options": [
+      "O(V^3)",
+      "O(V^2 log V)",
+      "O(E log V)",
+      "O(V * E)"
+    ],
+    "correct_answer": "O(V^3)",
+    "topic_tag": "Algorithmic Analysis",
+    "explanation": "Three nested loops iterating over intermediate vertices V lead to O(V^3) complexity.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Problem Solving",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "How does Reservoir Sampling select k items from an unknown stream of n elements with uniform probability?",
+    "options": [
+      "Fill reservoir with first k items, then for each i-th item replace a random slot with probability k/i",
+      "Store all items in RAM",
+      "Hash all items with SHA-256",
+      "Drop even-indexed items"
+    ],
+    "correct_answer": "Fill reservoir with first k items, then for each i-th item replace a random slot with probability k/i",
+    "topic_tag": "Streaming Algorithms",
+    "explanation": "Induction proves that every element processed up to item i has an exact k/i probability of selection.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  },
+  {
+    "category": "Problem Solving",
+    "difficulty": "Advanced",
+    "question_type": "multiple_choice",
+    "question_text": "What distinguishes NP-Complete problems from NP-Hard problems?",
+    "options": [
+      "NP-Complete problems must be in NP (verifiable in polynomial time) and NP-hard; NP-hard problems need not be in NP",
+      "NP-Complete problems are solved in O(n) time",
+      "NP-Hard problems are strictly easier than NP-Complete",
+      "No difference"
+    ],
+    "correct_answer": "NP-Complete problems must be in NP (verifiable in polynomial time) and NP-hard; NP-hard problems need not be in NP",
+    "topic_tag": "Computational Complexity",
+    "explanation": "NP-Complete problems are the hardest problems inside NP whose solutions can be verified in polynomial time.",
+    "code_starter": null,
+    "test_cases_or_rubric": null
+  }
+]
